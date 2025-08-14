@@ -150,9 +150,9 @@
           @endif
               </td>
               <td class="text-nowrap">
-                <a href="{{ route('stat-penduduk.edit', $row) }}"
+                <a href="{{ route('sotk.edit', $row) }}"
                 class="btn btn-link p-0 me-2 action-edit">Edit</a>
-                <form action="{{ route('stat-penduduk.destroy', $row) }}" method="POST" class="d-inline"
+                <form action="{{ route('sotk.destroy', $row) }}" method="POST" class="d-inline"
                 onsubmit="return confirm('Hapus?')">
                 @csrf @method('DELETE')
                 <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>

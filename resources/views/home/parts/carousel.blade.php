@@ -7,7 +7,7 @@
       {{-- SLIDE 1 --}}
       <div class="carousel-item active">
         <img class="w-100 d-block carousel-img"
-             src="{{ asset('home/img/banner-hut-ri 80.jpg') }}"
+             src="{{ asset('home/img/carousel/banner-hut-ri 80.jpg') }}"
              alt="Banner HUT RI">
 
         {{-- Overlay gelap: rata, tidak bergeser --}}
@@ -18,8 +18,8 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-9 pt-4 pt-md-5 text-start">
-                <h1 class="hero-title mb-3">Selamat Datang<br>Website Resmi Desa Kersik</h1>
-                <p class="hero-subtitle">Sumber informasi terbaru tentang pemerintahan di Desa Kersik.</p>
+                <h1 class="hero-title mb-3">Selamat Datang<br>Website Resmi Desa Siskaper</h1>
+                <p class="hero-subtitle">Sumber informasi terbaru tentang pemerintahan di Desa Sirih Sekapur Perkembangan.</p>
               </div>
             </div>
           </div>
@@ -29,6 +29,101 @@
         <div class="carousel-caption d-md-none mobile-cap-wrap"></div>
       </div>
       {{-- … slide lain --}}
+      <div class="carousel-item">
+        <img class="w-100 d-block carousel-img"
+             src="{{ asset('home/img/carousel/2.png') }}"
+             alt="Banner HUT RI">
+
+        {{-- Overlay gelap: rata, tidak bergeser --}}
+        <div class="carousel-overlay d-none d-md-block"></div>
+
+        {{-- DESKTOP/TABLET caption --}}
+        <div class="carousel-caption h-100 d-none d-md-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 pt-4 pt-md-5 text-start">
+                <h1 class="hero-title mb-3">Informasi & Layanan Publik</h1>
+                <p class="hero-subtitle">Akses mudah berita, pengumuman, dan pelayanan masyarakat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- MOBILE caption (opsional) --}}
+        <div class="carousel-caption d-md-none mobile-cap-wrap"></div>
+      </div>
+      <!-- 3 -->
+      <div class="carousel-item">
+        <img class="w-100 d-block carousel-img"
+             src="{{ asset('home/img/carousel/3.png') }}"
+             alt="Banner HUT RI">
+
+        {{-- Overlay gelap: rata, tidak bergeser --}}
+        <div class="carousel-overlay d-none d-md-block"></div>
+
+        {{-- DESKTOP/TABLET caption --}}
+        <div class="carousel-caption h-100 d-none d-md-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 pt-4 pt-md-5 text-start">
+                <h1 class="hero-title mb-3">Potensi Alam & Ekonomi</h1>
+                <p class="hero-subtitle">Mengembangkan pertanian, pariwisata, dan usaha kreatif warga.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- MOBILE caption (opsional) --}}
+        <div class="carousel-caption d-md-none mobile-cap-wrap"></div>
+      </div>
+      <!-- 4 -->
+      <div class="carousel-item">
+        <img class="w-100 d-block carousel-img"
+             src="{{ asset('home/img/carousel/4.png') }}"
+             alt="Banner HUT RI">
+
+        {{-- Overlay gelap: rata, tidak bergeser --}}
+        <div class="carousel-overlay d-none d-md-block"></div>
+
+        {{-- DESKTOP/TABLET caption --}}
+        <div class="carousel-caption h-100 d-none d-md-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 pt-4 pt-md-5 text-start">
+                <h1 class="hero-title mb-3">Gotong Royong Membangun Desa</h1>
+                <p class="hero-subtitle">Bersama wujudkan desa yang maju, mandiri, dan sejahtera.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- MOBILE caption (opsional) --}}
+        <div class="carousel-caption d-md-none mobile-cap-wrap"></div>
+      </div>
+      <!-- 5 -->
+      <div class="carousel-item">
+        <img class="w-100 d-block carousel-img"
+             src="{{ asset('home/img/carousel/5.jpg') }}"
+             alt="Banner HUT RI">
+
+        {{-- Overlay gelap: rata, tidak bergeser --}}
+        <div class="carousel-overlay d-none d-md-block"></div>
+
+        {{-- DESKTOP/TABLET caption --}}
+        <div class="carousel-caption h-100 d-none d-md-flex align-items-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-9 pt-4 pt-md-5 text-start">
+                <h2 class="hero-title mb-3">Lestarikan Budaya & Tradisi</h2>
+                <p class="hero-subtitle">Menjaga warisan leluhur demi generasi yang akan datang.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {{-- MOBILE caption (opsional) --}}
+        <div class="carousel-caption d-md-none mobile-cap-wrap"></div>
+      </div>
     </div>
 
     {{-- ARROWS --}}
@@ -74,11 +169,12 @@
     .hero-title{
       color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.35);
       font-weight:800; line-height:1.12;
-      font-size: clamp(2rem, 4vw, 4.2rem);
+      font-size: clamp(1.5rem, 3vw, 3.5rem);
     }
     .hero-subtitle{
       color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.35);
-      font-weight:600; font-size: clamp(1rem, 1.6vw, 1.25rem);
+      font-weight:600; 
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
       max-width: 900px;
     }
 
