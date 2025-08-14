@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use app\Models\User;
 
+
 class HomeController extends Controller
 {
 
@@ -25,7 +26,7 @@ class HomeController extends Controller
 
         else
         {
-            return view('user.home');
+            return view('home.userpage');
         }
 
 }

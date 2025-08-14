@@ -1,0 +1,151 @@
+Folder PATH listing
+Volume serial number is D297-B54E
+C:\LARAGON\WWW\SISKAPER-WEB\STORAGE
+¦   struktur.txt
+¦   
++---app
+¦   ¦   .gitignore
+¦   ¦   
+¦   +---private
+¦   ¦       .gitignore
+¦   ¦       
+¦   +---public
+¦       ¦   .gitignore
+¦       ¦   
+¦       +---sotk
+¦               KIRMwpcaIiMAYdhHUNa43T4CFLDS0Pwv8HvVEutE.jpg
+¦               RGGZnO4FrRTKegEQqcvbwWdSx0gOHi2eP9AoJOEi.jpg
+¦               
++---framework
+¦   ¦   .gitignore
+¦   ¦   
+¦   +---cache
+¦   ¦   ¦   .gitignore
+¦   ¦   ¦   
+¦   ¦   +---data
+¦   ¦           .gitignore
+¦   ¦           
+¦   +---sessions
+¦   ¦       .gitignore
+¦   ¦       
+¦   +---testing
+¦   ¦       .gitignore
+¦   ¦       
+¦   +---views
+¦           .gitignore
+¦           01c91c245d0531ee76f6382abb6c6896.php
+¦           02a07dbad10a4c683bec0216edcb2cb2.php
+¦           03c7ba7093a473c1fad1b59c25d9c424.php
+¦           0647883ac04315e74a2884633622fb49.php
+¦           07f9ebc7cb7d048a0816b1d0907620ec.php
+¦           09461c5faa7910cfd480e5af7fd28d24.php
+¦           0d6314eb2272d1070ce3fcdb15644365.php
+¦           0dd8067b3b0baaac954b8a95d3a179ef.php
+¦           0f41c252b87b06d4cc9208afa8a5db36.php
+¦           10fb9dc416ecf06a8325cb7f1b01e36b.php
+¦           1491784e4fa9ccdac4175d0b913a677e.php
+¦           16a65e01d592a2919839c4dcc6e9ca85.php
+¦           17e77abc5a9efb7bad086a6f8eeb6e70.php
+¦           1caca9bc6e548741c345d017ee0fc256.php
+¦           1e05410df702181a9da560cea1ffc277.php
+¦           247a390904e8e718b392cd4df97e2bb3.php
+¦           252084c3d3013165e2e42afa1e713b2d.php
+¦           255e921739f7d1d3e229debdbf9cbbd3.php
+¦           2734c2646406aa7b1c4277e1633dbb5e.php
+¦           297bd2965a5127fb6ee3520e708b5f4a.php
+¦           2aab90228043cac9540def53354cd8eb.php
+¦           2bbd01213aec93f5d4cb87ba460ebae9.php
+¦           2dbae2fce36c32827b5b060c542e257c.php
+¦           2dc5be84d262e74d3c94cfbe22ed6d96.php
+¦           2e7b4906e2ec0985999d115a35933f43.php
+¦           33df8888c29d7f1e2f86905e4a1d3c3a.php
+¦           34eaafeb868b4ea1d7d7c828890cc518.php
+¦           3551f38616101eb7ac922c727a201608.php
+¦           3574ebff9838915839accc8e2ba2cd34.php
+¦           357a2351d91793add673f23387c9ee3d.php
+¦           389a8b57d06552e3a1a20f2efd5958f6.php
+¦           3b35d623a65021ed4ec823cef3eccc43.php
+¦           416bb3fabd710b96bdb2a22d68548ec7.php
+¦           44c66c54aeae02070f5af7d4d45e0e21.php
+¦           473b65b3706db8bc24f4e9704b056bad.php
+¦           476a1288c6ab9188bf1139593d41cb2f.php
+¦           4b4d199c80f494a00a01a1bc2161c241.php
+¦           4c43d18fb50a201ea4ed07ec4a058b32.php
+¦           4cd03368be9b99ccff4b7cb7f41e61f7.php
+¦           4f77315ed388b09275a8b482ff0e3e90.php
+¦           4f7d020cab23c53330f53924c3582ec4.php
+¦           5125fac3155401cefea243fa95cd709c.php
+¦           51a3e9489abcbb6aa27134810c432bff.php
+¦           56c7e913a1185b23f2588868365b7cdf.php
+¦           5cd909e1a6611ea9b8758e401c436b64.php
+¦           5d28f2ef51ea6116004a88a891430f9d.php
+¦           5de569679c337c3c560e3d0d9bc9f4db.php
+¦           6004c6f63d6aeb70c1470d95016e701b.php
+¦           6530503b90273e76222fa3f5d89b66e2.php
+¦           66073740526812cd6fe03b749ebef070.php
+¦           6abe81fcce9d65a488820c35b21007c1.php
+¦           6c87b4d32c6651dffaeb1a35700fbc18.php
+¦           6d5de09d5f2eda1596f15315e25ea101.php
+¦           6e2da3336c5920089590c20a99c5e576.php
+¦           6e93a7007bf0cdabc5f84b299f2bc7fe.php
+¦           79280675ab186ae7f01c24dbb3605bd4.php
+¦           7a82a9073fad5916ea3ef46e7545db7e.php
+¦           7baeb0860844d0d3b0ebfaae0f819435.php
+¦           7ce3d0372d20612e2cfa95ae90d253ff.php
+¦           7d231b940e5aab3ed93897e1f6465367.php
+¦           7e31ec6590fdff31e504dd074006be08.php
+¦           7e3f11244343fc5a8cd756ee3ebb36f1.php
+¦           7f4a208bda76712fb467285f1c12b15a.php
+¦           8462297c2c089bf68c65e5698d3d13d2.php
+¦           847a43ee866c3407aa721bd3718434ac.php
+¦           8c723842f768e718047076a3d7aeca63.php
+¦           8f6f4bd40edeb13c5edcb90512abe9c9.php
+¦           915e96436642515e9cebe900253b5ad8.php
+¦           92bf57964868c81982fec900301faf79.php
+¦           94675715291bb99a58f869c8acc3d6be.php
+¦           95a428c94b30b1a5031e179cc94b5800.php
+¦           9b69379745dda2d2d1be7ad4417063fd.php
+¦           9c43e4644c6948ce1329e445c93e9567.php
+¦           a2f3874f470de59775784f39421e201e.php
+¦           a524c3849c68622374cc0a89e91c5800.php
+¦           aaedddc15724ec06a8298773d6b15b94.php
+¦           abbafca2db84db70cc6c092a62cecb84.php
+¦           b09fc1ca2dbde50eed1e38fe6c981ce2.php
+¦           b88740e994020609127632b540597c98.php
+¦           baf001db50e6c3c79feacad09e3cdf62.php
+¦           be699ac9e6a6e618a4a3c4bdbd47f88c.php
+¦           beb0c6fcaabc351f9ec72f6711b9f321.php
+¦           ca4ec033988261eddbc8dea97dc5fb4d.php
+¦           cc07d6fbd052ba1558ff10a7cc0a69d4.php
+¦           d05c983465cc55a2983d62d6e876b3ff.php
+¦           d1b8b06083d148e07901e60872b919e7.php
+¦           d44e9c4bda0d3ad152d2acaf33e2bf53.php
+¦           d471eb6362032448732b38c76c341341.php
+¦           d6f80ecbadcb384504610bca72463e61.php
+¦           d83c979614796a350671305176c74aa0.php
+¦           d84e4bd68604a4574de77478905c13c5.php
+¦           d8a2ef129cae00e749f928777f8b0a75.php
+¦           d8ba53c9d0b8161bfe79099d4084b9ea.php
+¦           da252f343fbc8ba2e001fac76d356446.php
+¦           da3759f2faeefc36d177201d8bf02c44.php
+¦           dae6c3c133c61c67ce3864faa35fe6c8.php
+¦           dc2aad10226f5c8db9e75d5b7a3ca8e5.php
+¦           dcccf07d9e8ce2c925740802dc0e9bd6.php
+¦           e280109ab5134e114205e889f8b1628c.php
+¦           e4a1a76c6e565891c0d59e5853177741.php
+¦           ebb52d9230956403c884a39037fa32d1.php
+¦           ec66f31cce840b9da8bbcdaaae3345f8.php
+¦           f20c4460c934e128db8744837e1b4deb.php
+¦           f45d720a19582bc98f769b7ad1447689.php
+¦           f7b70b41f999b6e66911893c7a9ba3ce.php
+¦           f819c78866d8d131e99059bef6dd7f15.php
+¦           fa54404ed603c5490a608387882274fe.php
+¦           fc1e442f6ed08a1386c93d7ef828bfcd.php
+¦           fd65bd818d8092bfdbf030ad0b400b8f.php
+¦           fda787955b3c43473e598082a9e3de5f.php
+¦           febb3498ab66882234fde8d18009ea65.php
+¦           
++---logs
+        .gitignore
+        laravel.log
+        
