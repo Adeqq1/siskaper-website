@@ -29,41 +29,50 @@
 
       <div class="col-lg-6 px-3">
         <div class="row g-3">
+
           <div class="col-6 text-center">
-            <div class="bg-white rounded p-3 shadow-sm w-500">
-              <img src="{{ asset('home/img/home.png')}}" alt="Profil Desa Icon" class="mb-2" style="width: 75px;">
-              <div class="fw-bold text-dark">PROFIL DESA</div>
-            </div>
+            <a href="{{ route('profile') }}" class="card-link d-block">
+              <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
+                <img src="{{ asset('home/img/home.png') }}" alt="Profil Desa Icon" class="mb-2" style="width:75px;">
+                <div class="fw-bold text-dark m-0">PROFIL DESA</div>
+              </div>
+            </a>
           </div>
 
           <div class="col-6 text-center">
-            <div class="bg-white rounded p-3 shadow-sm w-500">
-              <img src="{{ asset('home/img/map.png')}}" alt="Infografis Icon" class="mb-2" style="width: 75px;">
-              <div class="fw-bold text-dark">INFOGRAFIS</div>
-            </div>
+            <a href="{{ route('info_grafis') }}" class="card-link d-block">
+              <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
+                <img src="{{ asset('home/img/map.png') }}" alt="Infografis Icon" class="mb-2" style="width:75px;">
+                <div class="fw-bold text-dark m-0">INFOGRAFIS</div>
+              </div>
+            </a>
           </div>
 
           <div class="col-6 text-center">
-            <div class="bg-white rounded p-3 shadow-sm w-500">
-              <img src="{{ asset('home/img/news.png')}}" alt="Berita Icon" class="mb-2" style="width: 75px;">
-              <div class="fw-bold text-dark">BERITA</div>
-            </div>
+            <a href="{{ route('berita') }}" class="card-link d-block">
+              <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
+                <img src="{{ asset('home/img/news.png') }}" alt="Berita Icon" class="mb-2" style="width:75px;">
+                <div class="fw-bold text-dark m-0">BERITA</div>
+              </div>
+            </a>
           </div>
 
           <div class="col-6 text-center">
-            <div class="bg-white rounded p-3 shadow-sm w-500">
-              <img src="{{ asset('home/img/information.png')}}" alt="PPID Icon" class="mb-2" style="width: 75px;">
-              <div class="fw-bold text-dark">PPID</div>
-            </div>
+            <a href="{{ route('informasi') }}" class="card-link d-block">
+              <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
+                <img src="{{ asset('home/img/information.png') }}" alt="Surat Icon" class="mb-2" style="width:75px;">
+                <div class="fw-bold text-dark m-0">Pengajuan Surat</div>
+              </div>
+            </a>
           </div>
+
         </div>
       </div>
     </div> {{-- row --}}
-  </div>   {{-- container --}}
-</div>     {{-- container-xxl --}}
+  </div> {{-- container --}}
+</div> {{-- container-xxl --}}
 
-{{-- ================= MOBILE-ONLY (< lg) ================= --}}
-<section class="features-mobile d-lg-none py-4">
+{{-- ================= MOBILE-ONLY (< lg)=================--}} <section class="features-mobile d-lg-none py-4">
   <div class="container">
     <h2 class="mb-3 mobile-section-title">FITUR TERKINI</h2>
 
@@ -126,46 +135,65 @@
       </div>
     </div>
   </div>
-</section>
+  </section>
 
-{{-- ===== CSS (pindahkan ke custom.css kalau mau rapi) ===== --}}
-<style>
+  {{-- ===== CSS (pindahkan ke custom.css kalau mau rapi) ===== --}}
+  <style>
+    /* bikin <a> tampil seperti card tanpa underline/warna biru */
+  .card-link{ text-decoration:none; color:inherit; }
+  .card-link:focus-visible{ outline: 2px solid #166138; outline-offset: 3px; }
+
+  /* efek hover kecil (opsional) */
+  .card-link .shadow-sm{ transition: transform .15s ease, box-shadow .15s ease; }
+  .card-link:hover .shadow-sm{ transform: translateY(-2px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.08)!important; }
+
+
     /* Judul di mobile */
-  .mobile-section-title{
-    color: var(--brand-green);
-    font-weight: 800;
-    letter-spacing: .5px;
-    font-size: 1.15rem;
-  }
+    .mobile-section-title {
+      color: var(--brand-green);
+      font-weight: 800;
+      letter-spacing: .5px;
+      font-size: 1.15rem;
+    }
 
-  /* Link kartu icon */
-  .feature-link{
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-  }
+    /* Link kartu icon */
+    .feature-link {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+    }
 
-  .feature-chip{
-    width: 64px; height: 64px;
-    border-radius: 18px;
-    background:#fff; color:#166138; border:2px solid #2dc472;
-    display: grid; place-items: center;
-    margin: 0 auto 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.08);
-  }
-  .feature-chip img{
-    width: 28px; height: 28px;
-    object-fit: contain; display: block;
-  }
+    .feature-chip {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: #fff;
+      color: #166138;
+      border: 2px solid #2dc472;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
+    }
 
-  .feature-label{
-    color: var(--brand-green);
-    font-weight: 700;
-    font-size: .85rem;
-    line-height: 1.1;
-  }
+    .feature-chip img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      display: block;
+    }
 
-  /* Tambahan kecil agar grid tidak mepet pinggir layar kecil */
-  .features-mobile .container{ padding-left: .5rem; padding-right: .5rem; }
-</style>
+    .feature-label {
+      color: var(--brand-green);
+      font-weight: 700;
+      font-size: .85rem;
+      line-height: 1.1;
+    }
+
+    /* Tambahan kecil agar grid tidak mepet pinggir layar kecil */
+    .features-mobile .container {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+  </style>

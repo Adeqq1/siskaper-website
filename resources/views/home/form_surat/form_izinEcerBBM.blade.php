@@ -56,7 +56,7 @@
         }
 
         .headline {
-            color: #fc5652;
+            color: #166138;
             font-family: 'Montserrat', Arial, sans-serif;
             font-weight: 800;
             font-size: 2.2rem;
@@ -132,7 +132,7 @@
         }
 
         .btn-primary {
-            background: #fc5652;
+            background: #166138;
             color: #fff;
             border: none;
             border-radius: 8px;

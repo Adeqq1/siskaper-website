@@ -43,38 +43,152 @@
     <!-- Navbar End -->
 
     <style>
-        .form-format-surat {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 9px;
-        }
+  :root{
+    --brand:#166138;
+    --ink:#222;
+    --muted:#5b5b5b;
+    --card:#ffffff;
+    --soft:#f7faf7;
+    --line:#e9ecef;
+    --shadow:0 6px 24px rgba(22,97,56,.08);
+    --radius:16px;
+  }
 
-        .form-format-surat label {
-            font-size: 1.07rem;
-            margin-bottom: 4px;
-            color: #232323;
-            font-weight: 600;
-        }
+  /* ===== UTIL ===== */
+  .btn-outline{
+    --btnpad: .65rem 1rem;
+    display:inline-flex; align-items:center; gap:.5rem;
+    padding:var(--btnpad);
+    border:2px solid var(--brand);
+    color:var(--brand);
+    font-weight:700; text-decoration:none;
+    border-radius:12px; transition:.18s ease;
+    background:#fff;
+  }
+  .btn-outline:hover,
+  .btn-outline:focus{
+    background:var(--brand); color:#fff; text-decoration:none;
+    transform:translateY(-1px);
+  }
 
-        .form-format-surat select {
-            border: 1.5px solid #e4e4e4;
-            border-radius: 7px;
-            padding: 9px 18px;
-            font-size: 1.07rem;
-            width: 100%;
-            max-width: 300px;
-            outline: none;
-            background: #f9f9f9;
-            transition: border 0.15s;
-        }
+  /* ===== SECTION: PPID ===== */
+  .ppid-section{
+    margin: 36px 0 22px;
+    background:var(--card);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding: clamp(1rem, 2.5vw, 2rem);
+    display:grid; gap:clamp(1rem,2.5vw,2rem);
+    grid-template-columns: 1.1fr 1.2fr;   /* desktop 2 kolom */
+  }
+  .ppid-content{display:flex; flex-direction:column; gap: .75rem;}
+  .ppid-title{
+    font-family:"Roboto Slab",serif;
+    font-weight:800; letter-spacing:.2px;
+    color:var(--brand);
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    margin:0;
+  }
+  .ppid-desc{color:var(--ink); font-size:clamp(.98rem,1.1vw,1.08rem); margin:0 0 .4rem;}
+  .ppid-cards{
+    display:grid; gap:clamp(.8rem,1.8vw,1rem);
+    grid-template-columns: repeat(3, 1fr);
+    align-content:start;
+  }
+  .ppid-card{
+    background:var(--soft);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding: clamp(.9rem, 1.8vw, 1.1rem);
+    display:flex; flex-direction:column; align-items:center; text-align:center; gap:.6rem;
+    transition:.18s ease; height:100%;
+  }
+  .ppid-card img{width:56px; height:56px; object-fit:contain}
+  .ppid-card span{
+    font-weight:800; font-size:.92rem; color:var(--ink); line-height:1.25;
+  }
+  .ppid-card:hover{transform:translateY(-3px); box-shadow:var(--shadow);}
 
-        .form-format-surat select:focus {
-            border-color: #fc5652;
-            background: #fff;
-        }
-    </style>
+  /* ===== SECTION: INFORMASI PUBLIK ===== */
+  .info-publik-section{
+    margin: 28px 0 36px;
+  }
+  .info-publik-title{
+    font-family:"Roboto Slab",serif; font-weight:800;
+    color:var(--brand); letter-spacing:.3px;
+    font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+    margin:0 0 .25rem;
+  }
+  .info-publik-sub{color:var(--muted); margin:0 0 1rem; font-size:.98rem;}
+
+  .info-card{
+    background:#fff; border:1px solid var(--line);
+    border-radius:var(--radius); box-shadow:var(--shadow);
+    padding: clamp(1rem,2.2vw,1.25rem);
+    display:grid; gap:1rem;
+    grid-template-columns: 1fr auto;       /* desktop: kiri-kanan */
+    align-items:center; margin-bottom:12px;
+  }
+  .info-left{min-width:0}
+  .info-doc-title{font-size:1.05rem; color:var(--ink);}
+  .info-meta{color:#666; font-size:.95rem; margin-top:.35rem; line-height:1.45;}
+  .info-right{display:flex; gap:.6rem; flex-wrap:wrap; justify-content:flex-end}
+  .info-btn{ @apply .btn-outline; } /* jika pakai Tailwind – kalau tidak, biarkan default .btn-outline */
+  .info-btn{ padding:.55rem .9rem; display:inline-flex; align-items:center; gap:.5rem; border-radius:10px; }
+
+  /* ===== BOX AJUKAN SURAT ===== */
+  .info-request-box{
+    background:var(--soft); border:1px dashed var(--line);
+    border-radius:22px; padding: clamp(1rem,2.5vw,1.4rem);
+    display:grid; gap:clamp(.8rem,2vw,1rem);
+    grid-template-columns: 1fr auto; align-items:center;
+    justify-items: center;          /* semua anak di tengah secara horizontal */
+    text-align: center;             /* teks di tengah */
+  }
+  .info-request-text{font-size:1.05rem; color:var(--ink); font-weight:700;}
+
+  /* ====== FORM pilihan surat ====== */
+  .form-format-surat{
+    margin-top:0; display:flex; flex-direction:column; align-items:flex-start; gap:.5rem;
+    align-items: center; 
+}
+  
+  .form-format-surat label{
+    font-size:.98rem; margin:0; color:#232; font-weight:700;
+  }
+  .form-format-surat select{
+    border:1.6px solid var(--line); border-radius:10px;
+    padding:.65rem .9rem; font-size:1rem; width: min(320px, 74vw);
+    outline:none; background:#fff; transition:border .15s, box-shadow .15s;
+  }
+  .form-format-surat select:focus{
+    border-color:var(--brand);
+    box-shadow:0 0 0 .2rem rgba(22,97,56,.08);
+  }
+  .form-format-surat .btn-outline{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;                 /* biar margin auto bekerja */
+}
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 991.98px){ /* tablet */
+    .ppid-section{grid-template-columns:1fr;}
+    .ppid-cards{grid-template-columns: repeat(3, 1fr);}
+  }
+  @media (max-width: 767.98px){ /* mobile */
+    .ppid-cards{grid-template-columns: repeat(2, 1fr);}
+    .info-card{grid-template-columns:1fr; text-align:left;}
+    .info-right{justify-content:flex-start}
+    .info-request-box{grid-template-columns:1fr; align-items:start}
+    .btn-outline{--btnpad:.6rem .9rem}
+  }
+  @media (max-width: 479.98px){ /* small phones */
+    .ppid-cards{grid-template-columns:1fr;}
+    .ppid-card img{width:52px; height:52px}
+  }
+</style>
+
     <div class="container">
         <!-- Section: PPID -->
         <section class="ppid-section">
@@ -138,7 +252,7 @@
                         <option value="{{ route('sproadik') }}">Surat SPROADIK</option>
                         <!-- tambah sesuai kebutuhan -->
                     </select>
-                    <button type="submit" class="btn-outline" style="margin-top:14px;">Ajukan Permohonan</button>
+                    <button type="submit" class="btn-outline">Ajukan Permohonan</button>
                 </form>
             </div>
 
