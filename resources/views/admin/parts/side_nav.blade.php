@@ -80,12 +80,12 @@
         <div class="collapse" id="berita">
           <ul class="nav nav-collapse">
             <li>
-              <a href="{{ route('berita.index')}}">
+              <a href="{{ route('berita_admin.index')}}">
                 <span class="sub-item">Manajemen Berita</span>
               </a>
             </li>
             <li>
-              <a href="{{ route('berita.create')}}">
+              <a href="{{ route('berita_admin.create')}}">
                 <span class="sub-item">Tambahkan Berita</span>
               </a>
             </li>

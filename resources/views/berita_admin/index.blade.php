@@ -136,9 +136,9 @@
                                             <td>{{ strtoupper($row->status) }}</td>
                                             <td>{{ $row->published_at }}</td>
                                             <td class="text-nowrap">
-                                                <a href="{{ route('berita.edit', $row) }}"
+                                                <a href="{{ route('berita_admin.edit', $row) }}"
                                                     class="btn btn-link p-0 me-2 action-edit">Edit</a>
-                                                <form action="{{ route('berita.destroy', $row) }}" method="POST"
+                                                <form action="{{ route('berita_admin.destroy', $row) }}" method="POST"
                                                     class="d-inline" onsubmit="return confirm('Hapus?')">
                                                     @csrf @method('DELETE')
                                                     <button type="submit"

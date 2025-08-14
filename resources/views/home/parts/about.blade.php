@@ -149,7 +149,7 @@
   .feature-chip{
     width: 64px; height: 64px;
     border-radius: 18px;
-    background: var(--chip-bg);
+    background:#fff; color:#166138; border:2px solid #2dc472;
     display: grid; place-items: center;
     margin: 0 auto 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,.08);

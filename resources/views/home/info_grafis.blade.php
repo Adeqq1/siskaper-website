@@ -49,557 +49,359 @@
     <!-- Navbar Start -->
     @include('home.parts.navbar')
     <!-- Navbar End -->
+   
+    <!-- ==================== HEADER / HERO ==================== -->
+<section class="container-utama">
+  <div class="header-row">
+    <div class="header-left">
+      <h1 class="judul-utama">DEMOGRAFI PENDUDUK</h1>
+      <p class="subjudul">
+        Memberikan informasi lengkap mengenai karakteristik demografi penduduk: jumlah penduduk, usia, jenis
+        kelamin, pendidikan, pekerjaan, agama, dan aspek penting lain yang menggambarkan komposisi populasi.
+      </p>
+    </div>
+    <div class="header-right">
+      <img src="{{ asset('home/img/chart-3d.png') }}" alt="Demografi Ilustrasi">
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION: DEMOGRAFI HEADER ==================== -->
-    <section class="container-utama">
-        <div class="header-row">
-            <div class="header-left">
-                <h1 class="judul-utama">DEMOGRAFI PENDUDUK</h1>
-                <p class="subjudul">
-                    Memberikan informasi lengkap mengenai karakteristik demografi penduduk suatu wilayah. Mulai dari
-                    jumlah penduduk, usia, jenis kelamin, tingkat pendidikan, pekerjaan, agama, dan aspek penting
-                    lainnya yang menggambarkan komposisi populasi secara rinci.
-                </p>
-            </div>
-            <div class="header-right">
-                <img src="home/img/chart-3d.png" alt="Demografi Ilustrasi" />
-            </div>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+<!-- ==================== STAT KARTU 2x2 ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Jumlah Penduduk dan Kepala Keluarga</h2>
 
-    <!-- ==================== SECTION: STATISTIK GRID ==================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Jumlah Penduduk dan Kepala Keluarga</h2>
-        <div class="stat-grid">
-            <div class="stat-card">
-                <img src="icon/keluarga.png" alt="Total Penduduk" class="stat-icon">
-                <div>
-                    <div class="stat-label">TOTAL PENDUDUK</div>
-                    <div><span class="stat-jumlah">1.149</span> <span class="stat-unit">Jiwa</span></div>
-                </div>
-            </div>
-            <div class="stat-card">
-                <img src="icon/kepala-keluarga.png" alt="Kepala Keluarga" class="stat-icon">
-                <div>
-                    <div class="stat-label">KEPALA KELUARGA</div>
-                    <div><span class="stat-jumlah">304</span> <span class="stat-unit">Jiwa</span></div>
-                </div>
-            </div>
-            <div class="stat-card">
-                <img src="icon/perempuan.png" alt="Perempuan" class="stat-icon">
-                <div>
-                    <div class="stat-label">PEREMPUAN</div>
-                    <div><span class="stat-jumlah">543</span> <span class="stat-unit">Jiwa</span></div>
-                </div>
-            </div>
-            <div class="stat-card">
-                <img src="icon/laki-laki.png" alt="Laki-laki" class="stat-icon">
-                <div>
-                    <div class="stat-label">LAKI-LAKI</div>
-                    <div><span class="stat-jumlah">606</span> <span class="stat-unit">Jiwa</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <img src="{{ asset('home/icon/keluarga.png') }}" class="stat-icon" alt="">
+      <div>
+        <div class="stat-label">TOTAL PENDUDUK</div>
+        <div><span class="stat-jumlah">1.149</span> <span class="stat-unit">Jiwa</span></div>
+      </div>
+    </div>
 
-    <!-- ==================== SECTION: UMUR BAR CHART ==================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Kelompok Umur</h2>
-        <div class="card-flex">
-            <div class="card chart-wrap">
-                <canvas id="umurChart"></canvas>
-            </div>
-        </div>
-        <div class="info-row">
-            <div class="info-card green">
-                Laki-laki tertinggi <b>10-14</b>: <b>79 orang</b> (13.04%), terendah <b>85+</b>: <b>4 orang</b> (0.66%)
-            </div>
-            <div class="info-card pink">
-                Perempuan tertinggi <b>10-14</b>: <b>58 orang</b> (10.68%), terendah <b>80-84</b>: <b>2 orang</b>
-                (0.37%)
-            </div>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+    <div class="stat-card">
+      <img src="{{ asset('home/icon/kepala-keluarga.png') }}" class="stat-icon" alt="">
+      <div>
+        <div class="stat-label">KEPALA KELUARGA</div>
+        <div><span class="stat-jumlah">304</span> <span class="stat-unit">KK</span></div>
+      </div>
+    </div>
 
-    <!-- ==================== SECTION: DUSUN PIE ==================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Dusun</h2>
-        <div class="dusun-row">
-            <div class="dusun-pie">
-                <canvas id="dusunPie"></canvas>
-            </div>
-            <div class="dusun-keterangan">
-                <b>Keterangan:</b><br>
-                Empang : <span class="text-green">302 Jiwa</span><br>
-                Padaelo : <span class="text-green">692 Jiwa</span>
-            </div>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+    <div class="stat-card">
+      <img src="{{ asset('home/icon/laki-laki.png') }}" class="stat-icon" alt="">
+      <div>
+        <div class="stat-label">LAKI-LAKI</div>
+        <div><span class="stat-jumlah">606</span> <span class="stat-unit">Jiwa</span></div>
+      </div>
+    </div>
 
-    <!-- ==================== SECTION: PENDIDIKAN BAR ==================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Pendidikan</h2>
-        <div class="chart-wrap">
-            <canvas id="pendidikanChart"></canvas>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+    <div class="stat-card">
+      <img src="{{ asset('home/icon/perempuan.png') }}" class="stat-icon" alt="">
+      <div>
+        <div class="stat-label">PEREMPUAN</div>
+        <div><span class="stat-jumlah">543</span> <span class="stat-unit">Jiwa</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION: PEKERJAAN TABEL + 6 BOX ==================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Pekerjaan</h2>
-        <div class="pekerjaan-flex">
-            <div class="pekerjaan-tabel">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Jenis Pekerjaan</th>
-                            <th>Jumlah</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Pelajar/Mahasiswa</td>
-                            <td>323</td>
-                        </tr>
-                        <tr>
-                            <td>Mengurus Rumah Tangga</td>
-                            <td>270</td>
-                        </tr>
-                        <tr>
-                            <td>Belum/Tidak Bekerja</td>
-                            <td>268</td>
-                        </tr>
-                        <tr>
-                            <td>Karyawan Swasta</td>
-                            <td>118</td>
-                        </tr>
-                        <tr>
-                            <td>Nelayan/Perikanan</td>
-                            <td>51</td>
-                        </tr>
-                        <tr>
-                            <td>Petani/Pekebun</td>
-                            <td>38</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="pekerjaan-6box">
-                <div class="stat-card pekerjaan">Pelajar/Mahasiswa<div class="stat-jumlah">323</div>
-                </div>
-                <div class="stat-card pekerjaan">Mengurus Rumah Tangga<div class="stat-jumlah">270</div>
-                </div>
-                <div class="stat-card pekerjaan">Belum/Tidak Bekerja<div class="stat-jumlah">268</div>
-                </div>
-                <div class="stat-card pekerjaan">Karyawan Swasta<div class="stat-jumlah">118</div>
-                </div>
-                <div class="stat-card pekerjaan">Nelayan/Perikanan<div class="stat-jumlah">51</div>
-                </div>
-                <div class="stat-card pekerjaan">Petani/Pekebun<div class="stat-jumlah">38</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+<!-- ==================== BAR: KELOMPOK UMUR ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Kelompok Umur</h2>
 
-    <!-- ==================== SECTION: WAJIB PILIH ==================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Wajib Pilih</h2>
-        <div class="chart-wrap">
-            <canvas id="chartWajibPilih"></canvas>
-        </div>
-    </section>
-    <!-- ==================== END SECTION ==================== -->
+  <div class="card chart-wrap">
+    <canvas id="umurChart" height="360"></canvas>
+  </div>
 
-    <!-- ================== SECTION: PERKAWINAN ================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Perkawinan</h2>
-        <div class="perkawinan-6box">
-            <div class="stat-card perkawinan">Belum Kawin<div class="stat-jumlah">620</div>
-            </div>
-            <div class="stat-card perkawinan">Kawin<div class="stat-jumlah">454</div>
-            </div>
-            <div class="stat-card perkawinan">Cerai Mati<div class="stat-jumlah">69</div>
-            </div>
-            <div class="stat-card perkawinan">Cerai Hidup<div class="stat-jumlah">3</div>
-            </div>
-            <div class="stat-card perkawinan">Kawin Tercatat<div class="stat-jumlah">2</div>
-            </div>
-            <div class="stat-card perkawinan">Kawin Tidak Tercatat<div class="stat-jumlah">0</div>
-            </div>
-        </div>
-    </section>
-    <!-- =============== END SECTION: PERKAWINAN ================= -->
+  <div class="info-row">
+    <div class="info-card green">
+      Laki-laki tertinggi <b>10–14</b>: <b>81 orang</b> (≈13.4%), terendah <b>85+</b>: <b>4 orang</b> (≈0.66%).
+    </div>
+    <div class="info-card green-ghost">
+      Perempuan tertinggi <b>10–14</b>: <b>58 orang</b> (≈10.7%), terendah <b>80–84</b>: <b>2 orang</b> (≈0.37%).
+    </div>
+  </div>
+</section>
 
+<!-- ==================== PIE: DUSUN ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Dusun</h2>
 
-    <!-- ================== SECTION: AGAMA ================== -->
-    <section class="container-utama">
-        <h2 class="judul-section">Berdasarkan Agama</h2>
-        <div class="agama-7box">
-            <div class="stat-card agama">Islam<div class="stat-jumlah">1.149</div>
-            </div>
-            <div class="stat-card agama">Buddha<div class="stat-jumlah">0</div>
-            </div>
-            <div class="stat-card agama">Konghucu<div class="stat-jumlah">0</div>
-            </div>
-            <div class="stat-card agama">Kristen<div class="stat-jumlah">0</div>
-            </div>
-            <div class="stat-card agama">Katolik<div class="stat-jumlah">0</div>
-            </div>
-            <div class="stat-card agama">Hindu<div class="stat-jumlah">0</div>
-            </div>
-        </div>
-    </section>
-    <!-- =============== END SECTION: AGAMA ================= -->
+  <div class="dusun-row">
+    <div class="dusun-pie">
+      <canvas id="dusunPie" height="300"></canvas>
+    </div>
+    <div class="dusun-keterangan">
+      <b>Keterangan:</b><br>
+      Padaelo : <span class="text-green">692 Jiwa</span> (≈69.6%)<br>
+      Empang  : <span class="text-green">302 Jiwa</span> (≈30.4%)
+    </div>
+  </div>
+</section>
 
+<!-- ==================== BAR: PENDIDIKAN ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Pendidikan</h2>
+  <div class="chart-wrap">
+    <canvas id="pendidikanChart" height="360"></canvas>
+  </div>
+</section>
 
-    <style>
-        body {
-            background: #fafafa;
-            font-family: 'Roboto', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #222;
-        }
+<!-- ==================== PEKERJAAN: TABEL + 6 KARTU ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Pekerjaan</h2>
 
-        .container-utama {
-            width: 92vw;
-            max-width: 1200px;
-            margin: 2.2rem auto 2.5rem auto;
-            background: #fff;
-            border-radius: 22px;
-            padding: 2.3rem 2.6rem 2.6rem 2.6rem;
-            box-shadow: 0 3px 26px 0 rgba(32, 64, 32, .10);
-        }
+  <div class="pekerjaan-flex">
+    <div class="pekerjaan-tabel">
+      <table>
+        <thead>
+          <tr>
+            <th>Jenis Pekerjaan</th>
+            <th class="text-end">Jumlah</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Pelajar/Mahasiswa</td><td class="text-end">323</td></tr>
+          <tr><td>Mengurus Rumah Tangga</td><td class="text-end">270</td></tr>
+          <tr><td>Belum/Tidak Bekerja</td><td class="text-end">268</td></tr>
+          <tr><td>Karyawan Swasta</td><td class="text-end">118</td></tr>
+          <tr><td>Nelayan/Perikanan</td><td class="text-end">51</td></tr>
+          <tr><td>Petani/Pekebun</td><td class="text-end">38</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-        .header-row {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
+    <div class="pekerjaan-6box">
+      <div class="stat-card pekerjaan">Pelajar/Mahasiswa<div class="stat-jumlah">323</div></div>
+      <div class="stat-card pekerjaan">Mengurus Rumah Tangga<div class="stat-jumlah">270</div></div>
+      <div class="stat-card pekerjaan">Belum/Tidak Bekerja<div class="stat-jumlah">268</div></div>
+      <div class="stat-card pekerjaan">Karyawan Swasta<div class="stat-jumlah">118</div></div>
+      <div class="stat-card pekerjaan">Nelayan/Perikanan<div class="stat-jumlah">51</div></div>
+      <div class="stat-card pekerjaan">Petani/Pekebun<div class="stat-jumlah">38</div></div>
+    </div>
+  </div>
+</section>
 
-        .header-left {
-            flex: 1;
-        }
+<!-- ==================== BAR: WAJIB PILIH ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Wajib Pilih</h2>
+  <div class="chart-wrap">
+    <canvas id="chartWajibPilih" height="320"></canvas>
+  </div>
+</section>
 
-        .header-right img {
-            width: 360px;
-            max-width: 35vw;
-            display: block;
-        }
+<!-- ==================== 6 BOX: PERKAWINAN ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Perkawinan</h2>
 
-        .judul-utama {
-            color: #f65555;
-            font-family: 'Roboto Slab', serif;
-            font-size: 2.6rem;
-            margin-bottom: .8rem;
-            font-weight: 800;
-        }
+  <div class="perkawinan-6box">
+    <div class="stat-card perkawinan">Belum Kawin<div class="stat-jumlah">620</div></div>
+    <div class="stat-card perkawinan">Kawin<div class="stat-jumlah">454</div></div>
+    <div class="stat-card perkawinan">Cerai Mati<div class="stat-jumlah">69</div></div>
+    <div class="stat-card perkawinan">Cerai Hidup<div class="stat-jumlah">3</div></div>
+    <div class="stat-card perkawinan">Kawin Tercatat<div class="stat-jumlah">2</div></div>
+    <div class="stat-card perkawinan">Kawin Tidak Tercatat<div class="stat-jumlah">0</div></div>
+  </div>
+</section>
 
-        .judul-section {
-            color: #f65555;
-            font-family: 'Roboto Slab', serif;
-            font-size: 2rem;
-            margin-bottom: 1.2rem;
-            font-weight: 800;
-        }
+<!-- ==================== 6–7 BOX: AGAMA ==================== -->
+<section class="container-utama">
+  <h2 class="judul-section">Berdasarkan Agama</h2>
 
-        .subjudul {
-            font-size: 1.13rem;
-            color: #181818;
-        }
+  <div class="agama-7box">
+    <div class="stat-card agama">Islam<div class="stat-jumlah">1.149</div></div>
+    <div class="stat-card agama">Kristen<div class="stat-jumlah">0</div></div>
+    <div class="stat-card agama">Katolik<div class="stat-jumlah">0</div></div>
+    <div class="stat-card agama">Hindu<div class="stat-jumlah">0</div></div>
+    <div class="stat-card agama">Buddha<div class="stat-jumlah">0</div></div>
+    <div class="stat-card agama">Konghucu<div class="stat-jumlah">0</div></div>
+  </div>
+</section>
 
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.2rem;
-            margin: 1.5rem 0 1.2rem 0;
-        }
+<style>
+  :root{
+    --brand:#166138;
+    --brand-700:#0f4a2c;
+    --brand-200:#e8f3ec;
+    --ink:#222;
+    --muted:#555;
+    --card:#ffffff;
+    --card-soft:#f7faf7;
+    --shadow:0 3px 26px rgba(32,64,32,.10);
+  }
 
-        .stat-card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 1.2rem;
-            background: #f8faf8;
-            border-radius: 16px;
-            padding: 1.5rem 1.5rem;
-            box-shadow: 0 2px 12px 0 rgba(32, 64, 32, .07);
-            font-size: 1.15rem;
-            min-width: 170px;
-            min-height: 92px;
-            justify-content: flex-start;
-        }
+  body{background:#fafafa;color:var(--ink);font-family:Roboto,Arial,sans-serif;margin:0}
 
-        .stat-card.pekerjaan,
-        .stat-card.perkawinan,
-        .stat-card.agama {
-            flex-direction: column;
-            gap: .5rem;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-            min-width: 120px;
-        }
+  .container-utama{
+    width:min(1200px, 92vw);
+    margin:2.2rem auto;
+    background:var(--card);
+    border-radius:22px;
+    padding:2.3rem 2.6rem;
+    box-shadow:var(--shadow);
+  }
 
-        .stat-label {
-            color: #555;
-            letter-spacing: 1px;
-            font-weight: 500;
-            margin-bottom: .18rem;
-        }
+  .header-row{display:flex;align-items:center;gap:3rem;flex-wrap:wrap}
+  .header-left{flex:1}
+  .header-right img{width:360px;max-width:35vw;display:block}
 
-        .stat-jumlah {
-            color: #166138;
-            font-family: 'Roboto Slab', serif;
-            font-size: 2.15rem;
-            font-weight: 800;
-        }
+  .judul-utama{
+    color:var(--brand);font-family:"Roboto Slab",serif;
+    font-weight:800;font-size:2.6rem;margin:.2rem 0 .8rem
+  }
+  .judul-section{
+    color:var(--brand);font-family:"Roboto Slab",serif;
+    font-weight:800;font-size:2rem;margin:0 0 1.2rem
+  }
+  .subjudul{font-size:1.08rem;color:#181818}
 
-        .stat-unit {
-            color: #555;
-            font-size: 1.06rem;
-            margin-left: 3px;
-        }
+  .stat-grid{
+    display:grid;gap:1.4rem;margin-top:1.2rem;
+    grid-template-columns:repeat( auto-fit, minmax(220px,1fr) );
+  }
+  .stat-card{
+    display:flex;align-items:center;gap:1rem;justify-content:flex-start;
+    background:var(--card-soft);border-radius:16px;padding:1.1rem 1.3rem;
+    box-shadow:0 2px 12px rgba(32,64,32,.07);min-height:92px
+  }
+  .stat-card.pekerjaan,.stat-card.perkawinan,.stat-card.agama{
+    flex-direction:column;text-align:center;gap:.45rem;min-height:120px
+  }
+  .stat-label{color:var(--muted);letter-spacing:.5px;font-weight:500}
+  .stat-jumlah{color:var(--brand);font-family:"Roboto Slab",serif;font-weight:800;font-size:2rem}
+  .stat-unit{color:var(--muted);margin-left:4px}
+  .stat-icon{width:60px;height:60px;object-fit:contain}
 
-        .stat-icon {
-            width: 64px;
-            height: 64px;
-            object-fit: contain;
-        }
+  .card{background:var(--card-soft);border-radius:16px;padding:1.4rem 1.4rem 1.1rem;box-shadow:0 2px 12px rgba(32,64,32,.06)}
+  .chart-wrap{width:100%;min-height:320px}
 
-        .card-flex {
-            display: flex;
-            justify-content: center;
-        }
+  .info-row{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+  .info-card{border-radius:10px;padding:.8rem 1rem;font-size:1rem;font-weight:500}
+  .info-card.green{background:var(--brand-200);color:var(--brand-700)}
+  .info-card.green-ghost{background:#f1f7f3;color:#2b5b3f}
 
-        .card.chart-wrap {
-            background: #f8faf8;
-            padding: 2rem 2rem 1.5rem 2rem;
-            border-radius: 16px;
-            width: 100%;
-            box-shadow: 0 2px 12px 0 rgba(32, 64, 32, .06);
-            min-height: 320px;
-            max-width: 760px;
-        }
+  .dusun-row{display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+  .dusun-pie{flex:1 1 320px;max-width:520px}
+  .dusun-keterangan{flex:1 1 220px;font-size:1.06rem;line-height:2;color:var(--ink)}
+  .text-green{color:var(--brand);font-weight:700}
 
-        .info-row {
-            display: flex;
-            gap: 1.2rem;
-            margin-top: 1.1rem;
-            flex-wrap: wrap;
-        }
+  .pekerjaan-flex{display:flex;gap:2rem;flex-wrap:wrap}
+  .pekerjaan-tabel{flex:1 1 280px;min-width:240px}
+  .pekerjaan-tabel table{width:100%;border-collapse:collapse;font-size:1rem;background:#fff;border-radius:13px;overflow:hidden}
+  .pekerjaan-tabel th{background:var(--brand);color:#fff;font-weight:700;text-align:left;padding:1rem .9rem}
+  .pekerjaan-tabel td{padding:.85rem .9rem;border-bottom:1px solid #f0f0f0}
+  .pekerjaan-tabel tr:last-child td{border-bottom:0}
+  .pekerjaan-6box{
+    flex:2 1 380px;display:grid;gap:1rem;
+    grid-template-columns:repeat(3, 1fr);min-width:270px
+  }
+  .text-end{text-align:right}
 
-        .info-card {
-            background: #e6f2e6;
-            border-radius: 9px;
-            padding: .9rem 1.5rem;
-            font-size: 1.08rem;
-            color: #1b5639;
-            font-weight: 500;
-            flex: 1;
-        }
+  .perkawinan-6box,.agama-7box{
+    display:grid;gap:1rem;margin:1.2rem 0 2.2rem;
+    grid-template-columns:repeat( auto-fit, minmax(150px,1fr) );
+  }
 
-        .info-card.pink {
-            background: #ffe6e2;
-            color: #d94300;
-        }
+  /* ====== Responsive ====== */
+  @media (max-width:900px){
+    .container-utama{padding:1.5rem 1rem}
+    .header-right img{width:220px;max-width:48vw}
+    .pekerjaan-6box{grid-template-columns:repeat(2, 1fr)}
+  }
+  @media (max-width:600px){
+    .header-row{flex-direction:column;gap:1rem}
+    .judul-utama,.judul-section{font-size:1.35rem}
+    .stat-card{min-height:86px}
+    .stat-jumlah{font-size:1.6rem}
+  }
+</style>
 
-        .info-card.green {
-            background: #e6f2e6;
-            color: #1b5639;
-        }
+<!-- ==================== SCRIPTS: CHART.JS ==================== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Palet hijau
+  const C_PRIMARY = '#166138';
+  const C_PRIMARY_SOFT = 'rgba(22, 97, 56, .25)';
+  const C_SECONDARY = '#6fb18f'; // nuansa hijau muda
 
-        .dusun-row {
-            display: flex;
-            align-items: center;
-            gap: 2.2rem;
-            flex-wrap: wrap;
-        }
+  // ------- Umur (horizontal stacked) -------
+  const umurLabels = ['85+','80-84','75-79','70-74','65-69','60-64','55-59','50-54','45-49','40-44','35-39','30-34','25-29','20-24','15-19','10-14','5-9','0-4'];
+  const laki =  [4,2,5,8,10,12,18,25,37,55,44,43,49,53,57,81,44,20];
+  const pr   =  [5,2,4,8,10,20,18,25,34,41,43,39,49,53,67,58,50,20];
 
-        .dusun-pie {
-            flex: 1 1 320px;
-            max-width: 480px;
-        }
+  new Chart(document.getElementById('umurChart'), {
+    type: 'bar',
+    data: {
+      labels: umurLabels,
+      datasets: [
+        { label: 'Laki-Laki', data: laki, backgroundColor: C_PRIMARY, borderRadius: 6, barThickness: 10 },
+        { label: 'Perempuan', data: pr, backgroundColor: C_SECONDARY, borderRadius: 6, barThickness: 10 }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      plugins: {
+        legend: { position: 'bottom', labels:{ usePointStyle:true } },
+        tooltip: { enabled:true }
+      },
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: { stacked:true, grid:{ color:'#f0f0f0' } },
+        y: { stacked:true, grid:{ display:false } }
+      }
+    }
+  });
 
-        .dusun-keterangan {
-            flex: 1 1 220px;
-            font-size: 1.2rem;
-            font-family: 'Roboto', Arial, sans-serif;
-            color: #222;
-            line-height: 2.1;
-        }
+  // ------- Dusun (pie) -------
+  new Chart(document.getElementById('dusunPie'), {
+    type: 'pie',
+    data: {
+      labels: ['Padaelo','Empang'],
+      datasets: [ { data: [692, 302], backgroundColor: [C_PRIMARY, C_SECONDARY], borderWidth: 0 } ]
+    },
+    options: {
+      plugins:{ legend:{ position:'bottom', labels:{ usePointStyle:true } } }
+    }
+  });
 
-        .text-green {
-            color: #166138;
-            font-weight: 600;
-        }
+  // ------- Pendidikan (vertical bar) -------
+  new Chart(document.getElementById('pendidikanChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Belum Tamat','SD/Setara','SMP/Setara','SMA/Setara','SMK/Setara','Diploma I/II','Diploma III','Diploma IV/S1','S2','S3'],
+      datasets: [{
+        data: [173,201,285,140,287,22,13,26,2,0],
+        backgroundColor: C_PRIMARY, borderRadius: 8, barPercentage:.6, categoryPercentage:.75
+      }]
+    },
+    options: {
+      plugins:{ legend:{ display:false } },
+      scales:{
+        x:{ grid:{ display:false } },
+        y:{ beginAtZero:true, grid:{ color:'#f0f0f0' } }
+      },
+      responsive:true, maintainAspectRatio:false
+    }
+  });
 
-        .chart-wrap {
-            width: 100%;
-            min-height: 320px;
-            background: #f8faf8;
-            border-radius: 13px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px 0 rgba(32, 64, 32, .06);
-        }
-
-        .pekerjaan-flex {
-            display: flex;
-            gap: 2.4rem;
-            flex-wrap: wrap;
-        }
-
-        .pekerjaan-tabel {
-            flex: 1 1 250px;
-            min-width: 210px;
-        }
-
-        .pekerjaan-tabel table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1.09rem;
-            background: #fff;
-            border-radius: 13px;
-            overflow: hidden;
-        }
-
-        .pekerjaan-tabel th {
-            background: #f65555;
-            color: #fff;
-            font-weight: 700;
-            text-align: left;
-            padding: 1rem .8rem;
-        }
-
-        .pekerjaan-tabel td {
-            padding: .9rem .8rem;
-            border-bottom: 1px solid #f2f2f2;
-        }
-
-        .pekerjaan-tabel tr:last-child td {
-            border-bottom: none;
-        }
-
-        .pekerjaan-6box {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.3rem;
-            flex: 2 1 380px;
-            min-width: 270px;
-        }
-
-        .perkawinan-6box,
-        .agama-7box {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1.2rem;
-            margin: 1.5rem 0 2.3rem 0;
-        }
-
-        .perkawinan-6box .stat-card,
-        .agama-7box .stat-card {
-            min-width: 120px;
-        }
-
-        @media (max-width: 900px) {
-            .container-utama {
-                padding: 1.5rem 1rem;
-            }
-
-            .header-right img {
-                width: 210px;
-            }
-
-            .stat-grid,
-            .perkawinan-6box,
-            .agama-7box {
-                gap: 1rem;
-            }
-
-            .dusun-row,
-            .pekerjaan-flex {
-                flex-direction: column;
-                gap: 1.1rem;
-            }
-
-            .dusun-pie {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .header-row {
-                flex-direction: column;
-                gap: 1.2rem;
-            }
-
-            .judul-utama,
-            .judul-section {
-                font-size: 1.35rem;
-            }
-
-            .stat-card,
-            .stat-card.pekerjaan,
-            .stat-card.perkawinan,
-            .stat-card.agama {
-                min-width: 100px;
-                font-size: .99rem;
-            }
-        }
-    </style>
-
-
-    <!-- Tambahkan Chart.js di atas script -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('chartWajibPilih').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['2023', '2024', '2025'],
-                datasets: [{
-                    label: '',
-                    data: [784, 808, 831],
-                    backgroundColor: '#a80000',
-                    borderRadius: 10,
-                    barPercentage: 0.5,
-                    categoryPercentage: 0.7,
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true },
-                    datalabels: {
-                        color: '#222',
-                        anchor: 'end',
-                        align: 'start',
-                        font: { weight: 700, size: 16 }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: { display: false },
-                        ticks: { font: { size: 17 } }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        grid: { color: '#f0f0f0', lineWidth: 2 },
-                        ticks: { stepSize: 200, font: { size: 17 } }
-                    }
-                },
-                responsive: true,
-                maintainAspectRatio: false,
-            }
-        });
-    </script>
+  // ------- Wajib Pilih (bar) -------
+  new Chart(document.getElementById('chartWajibPilih'), {
+    type: 'bar',
+    data: {
+      labels: ['2023','2024','2025'],
+      datasets: [{ data:[784,808,831], backgroundColor:C_PRIMARY, borderRadius:10, barPercentage:.5, categoryPercentage:.7 }]
+    },
+    options: {
+      plugins:{ legend:{ display:false } },
+      scales:{
+        x:{ grid:{ display:false } },
+        y:{ beginAtZero:true, grid:{ color:'#f0f0f0' }, ticks:{ stepSize:200 } }
+      },
+      responsive:true, maintainAspectRatio:false
+    }
+  });
+</script>
 
 
 

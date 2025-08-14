@@ -159,35 +159,6 @@
     justify-content: center;
     text-align: center;
     background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    width: 15%;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    width: 3rem;
-    height: 3rem;
-    background-color: var(--dark);
-    border: 12px solid var(--dark);
-    border-radius: 3rem;
-}
-
-@media (max-width: 768px) {
-    #header-carousel .carousel-item {
-        position: relative;
-        min-height: 450px;
-    }
-    
-    #header-carousel .carousel-item img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 }
 
 .page-header {
@@ -475,7 +446,7 @@
   
 
   .sotk-card {
-    background: #ff4848;
+    background: #166138;
     border-radius: 12px;
     box-shadow: 0 4px 18px 0 rgba(120, 50, 50, 0.10);
     overflow: hidden;
@@ -500,7 +471,7 @@
   }
   
   .sotk-caption {
-    background: #f44336;
+    background: #166138;
     color: #fff;
     padding: 18px 0 12px 0;
     width: 100%;

@@ -87,9 +87,9 @@
 
 
                     <!-- cards -->
-                    <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('berita_admin.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @include('berita._form')
+                        @include('berita_admin._form')
                         
                     </form>
                     <!-- end cards -->

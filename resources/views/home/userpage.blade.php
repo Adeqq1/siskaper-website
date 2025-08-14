@@ -66,7 +66,7 @@
   <!-- Statistik Penduduk End -->
 
   <!-- Apbd Desa Start -->
-  @include ('home.parts.apbd_desa')
+  
   <!-- Apbs Desa End -->
 
   <!-- berita start -->

@@ -94,7 +94,7 @@
         'data' => [1200, 1275, 1330, 1410, 1505],
       ];
       $queue = $queue ?? [
-        ['label' => '2 draft berita menunggu publikasi', 'route' => route('berita.index')],
+        ['label' => '2 draft berita menunggu publikasi', 'route' => route('berita_admin.index')],
         ['label' => 'Lengkapi data Statistik tahun berjalan', 'route' => route('stat-penduduk.index')],
       ];
     @endphp
@@ -228,7 +228,7 @@
             <div class="card mt-3">
               <div class="card-body">
                 <div class="d-flex flex-wrap gap-2">
-                  <a href="{{ route('berita.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>
+                  <a href="{{ route('berita_admin.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>
                     Tambah Berita</a>
                   <a href="{{ route('galeri-desa.create') }}" class="btn btn-primary btn-sm"><i
                       class="fas fa-image me-1"></i> Unggah Galeri</a>

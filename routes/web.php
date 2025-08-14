@@ -107,7 +107,7 @@ Route::get('/form-surat/sproadik', function () {
 Route::resource('sotk', SotkController::class);
 Route::resource('stat-penduduk', StatPendudukController::class);
 Route::resource('apbd-desa', ApbdDesaController::class);
-Route::resource('berita', BeritaController::class);
+Route::resource('berita_admin', BeritaController::class);
 Route::resource('produk-desa', ProdukDesaController::class);
 Route::resource('galeri-desa', GaleriDesaController::class);
 

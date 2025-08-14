@@ -12,12 +12,12 @@ class BeritaController extends Controller
     public function index()
     {
         $data = Berita::orderByDesc('published_at')->orderByDesc('created_at')->paginate(20);
-        return view('berita.index', compact('data'));
+        return view('berita_admin.index', compact('data'));
     }
 
     public function create()
     {
-        return view('berita.create');
+        return view('berita_admin.create');
     }
 
     public function store(Request $request)
@@ -41,12 +41,12 @@ class BeritaController extends Controller
         }
 
         $item = Berita::create($validated);
-        return redirect()->route('berita.index')->with('success', 'Berita tersimpan');
+        return redirect()->route('berita_admin.index')->with('success', 'Berita tersimpan');
     }
 
     public function edit(Berita $beritum)
     {
-        return view('berita.edit', ['item' => $beritum]);
+        return view('berita_admin.edit', ['item' => $beritum]);
     }
 
     public function update(Request $request, Berita $beritum)
@@ -72,7 +72,7 @@ class BeritaController extends Controller
         }
 
         $beritum->update($validated);
-        return redirect()->route('berita.index')->with('success', 'Berita diupdate');
+        return redirect()->route('berita_admin.index')->with('success', 'Berita diupdate');
     }
 
     public function destroy(Berita $beritum)
