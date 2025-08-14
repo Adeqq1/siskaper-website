@@ -16,7 +16,7 @@
 
       {{-- Opsi B: Embed biasa (darurat). Bisa coba t=k (kadang diabaikan oleh Google). --}}
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5641.1367051983825!2d101.74405505226925!3d-1.2386481291611138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e2c0bdf0b75fa6b%3A0x22ffade240cf5ec5!2sSirih%20Sekapur%20Perkembangan!5e0!3m2!1sen!2sid!4v1754287509569!5m2!1sen!2sid&t=k"
+        src="https://maps.google.com/maps?q=loc:-1.238648,101.744055&z=16&t=k&hl=id&output=embed"
         loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
