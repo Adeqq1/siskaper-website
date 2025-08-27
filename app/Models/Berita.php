@@ -11,7 +11,19 @@ class Berita extends Model
     use HasFactory;
 
     protected $fillable = [
-        'judul','slug','gambar_path','excerpt','konten','status','published_at'
+        'judul',
+        'slug',
+        'gambar_path',
+        'excerpt',
+        'konten',
+        'status',
+        'published_at'
+    ];
+
+    protected $casts = [
+        'published_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
 
     protected static function booted()
@@ -34,4 +46,10 @@ class Berita extends Model
             }
         });
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 }

@@ -36,12 +36,12 @@ class GaleriDesaController extends Controller
         return redirect()->route('galeri-desa.index')->with('success', 'Foto tersimpan');
     }
 
-    public function edit(GaleriDesa $galeri_desum)
+    public function edit(GaleriDesa $galeri_desa)
     {
-        return view('galeri_desa.edit', ['item' => $galeri_desum]);
+        return view('galeri_desa.edit', ['item' => $galeri_desa]);
     }
 
-    public function update(Request $request, GaleriDesa $galeri_desum)
+    public function update(Request $request, GaleriDesa $galeri_desa)
     {
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
@@ -51,20 +51,20 @@ class GaleriDesaController extends Controller
         ]);
 
         if ($request->hasFile('gambar')) {
-            if ($galeri_desum->gambar_path)
-                Storage::disk('public')->delete($galeri_desum->gambar_path);
+            if ($galeri_desa->gambar_path)
+                Storage::disk('public')->delete($galeri_desa->gambar_path);
             $validated['gambar_path'] = $request->file('gambar')->store('galeri', 'public');
         }
 
-        $galeri_desum->update($validated);
+        $galeri_desa->update($validated);
         return redirect()->route('galeri-desa.index')->with('success', 'Foto diupdate');
     }
 
-    public function destroy(GaleriDesa $galeri_desum)
+    public function destroy(GaleriDesa $galeri_desa)
     {
-        if ($galeri_desum->gambar_path)
-            Storage::disk('public')->delete($galeri_desum->gambar_path);
-        $galeri_desum->delete();
+        if ($galeri_desa->gambar_path)
+            Storage::disk('public')->delete($galeri_desa->gambar_path);
+        $galeri_desa->delete();
         return back()->with('success', 'Foto dihapus');
     }
 }

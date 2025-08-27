@@ -14,6 +14,14 @@ class SotkController extends Controller
         return view('sotk.index', compact('data'));
     }
 
+    public function publik()
+    {
+        $sotkData = \App\Models\Sotk::orderBy('urutan')->get();
+        return view('home.parts.struktur_desa', ['data' => $sotkData]);
+    }
+
+
+
     public function create()
     {
         return view('sotk.create');
@@ -34,7 +42,7 @@ class SotkController extends Controller
         }
 
         Sotk::create($validated);
-        return redirect()->route('sotk.index')->with('success','Data tersimpan');
+        return redirect()->route('sotk.index')->with('success', 'Data tersimpan');
     }
 
     public function edit(Sotk $sotk)
@@ -53,18 +61,20 @@ class SotkController extends Controller
         ]);
 
         if ($request->hasFile('foto')) {
-            if ($sotk->foto_path) Storage::disk('public')->delete($sotk->foto_path);
+            if ($sotk->foto_path)
+                Storage::disk('public')->delete($sotk->foto_path);
             $validated['foto_path'] = $request->file('foto')->store('sotk', 'public');
         }
 
         $sotk->update($validated);
-        return redirect()->route('sotk.index')->with('success','Data diupdate');
+        return redirect()->route('sotk.index')->with('success', 'Data diupdate');
     }
 
     public function destroy(Sotk $sotk)
     {
-        if ($sotk->foto_path) Storage::disk('public')->delete($sotk->foto_path);
+        if ($sotk->foto_path)
+            Storage::disk('public')->delete($sotk->foto_path);
         $sotk->delete();
-        return back()->with('success','Data dihapus');
+        return back()->with('success', 'Data dihapus');
     }
 }

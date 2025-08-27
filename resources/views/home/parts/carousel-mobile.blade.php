@@ -9,7 +9,7 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img class="w-100 d-block carousel-img"
-               src="{{ asset('home/img/banner-hut-ri 80.jpg') }}"
+               src="{{ asset('home/img/carousel/5.jpg') }}"
                alt="Banner HUT RI">
 
           <div class="carousel-caption d-md-none mobile-cap-wrap"></div>

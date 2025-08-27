@@ -77,11 +77,11 @@
 
 
                 <div class="container" style="margin-top: 10vh;">
-                    <h1 style="font-weight: bold; text-align: center;">Edit Galeri</h1>
+                    <h1 style="font-weight: bold; text-align: center;">Edit</h1>
                     <!-- form -->
-                    <form action="{{ route('galeri-desa.update', $item) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('galeri-desa.update',['galeri_desa' => $item->getKey()]) }}" method="POST" enctype="multipart/form-data">
                         @csrf @method('PUT')
-                        @include('galeri_desa._form')
+                        @include('galeri_desa._form')                       
                     </form>
                     <!-- end form -->
                 </div>

@@ -136,7 +136,7 @@
           <div class="card-body">
 
             <div class="table-responsive">
-              <table class="table table-striped table-hover align-middle">
+              <table class="table table-striped table-hover align-middle"  style="text-align: center;">
                 <thead class="table-light">
                 <h1 style="font-weight: bold; text-align: center;">Statistik Penduduk</h1>
                   <tr>
@@ -144,6 +144,8 @@
                     <th class="text-nowrap">KK</th>
                     <th class="text-nowrap">Laki</th>
                     <th class="text-nowrap">Perempuan</th>
+                    <th class="text-nowrap">Penduduk Sementara</th>
+                    <th class="text-nowrap">Mutasi Penduduk</th>
                     <th class="text-nowrap">Total</th>
                     <th class="text-nowrap">Aksi</th>
                   </tr>
@@ -155,6 +157,8 @@
             <td>{{ number_format($row->kk) }}</td>
             <td>{{ number_format($row->laki_laki) }}</td>
             <td>{{ number_format($row->perempuan) }}</td>
+            <td>{{ number_format($row->penduduk_sementara) }}</td>
+            <td>{{ number_format($row->mutasi_penduduk) }}</td>
             <td>{{ number_format($row->total) }}</td>
             <td class="text-nowrap">
               <a href="{{ route('stat-penduduk.edit', $row) }}"
@@ -169,6 +173,14 @@
           @endforeach
                 </tbody>
               </table>
+              <div class="card mt-3">
+                <div class="card-body">
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ route('stat-penduduk.create') }}" class="btn btn-primary btn-sm"><i
+                        class="fas fa-user-friends me-1"></i> Tambah Statistik Penduduk</a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="mt-3">

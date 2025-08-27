@@ -24,6 +24,8 @@ class StatPendudukController extends Controller
             'tahun' => 'required|integer|min:2000|max:2100|unique:stat_penduduks,tahun',
             'laki_laki' => 'required|integer|min:0',
             'perempuan' => 'required|integer|min:0',
+            'penduduk_sementara' => 'required|integer|min:0',
+            'mutasi_penduduk' => 'required|integer|min:0',
             'kk' => 'required|integer|min:0',
         ]);
 
@@ -42,6 +44,8 @@ class StatPendudukController extends Controller
             'tahun' => 'required|integer|min:2000|max:2100|unique:stat_penduduks,tahun,' . $stat_penduduk->id,
             'laki_laki' => 'required|integer|min:0',
             'perempuan' => 'required|integer|min:0',
+            'penduduk_sementara' => 'required|integer|min:0',
+            'mutasi_penduduk' => 'required|integer|min:0',
             'kk' => 'required|integer|min:0',
         ]);
 

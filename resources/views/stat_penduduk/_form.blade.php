@@ -45,6 +45,28 @@
                         class="form-control bg-light border-0 rounded-3" placeholder="Masukkan jumlah perempuan">
                 </div>
             </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Penduduk Sementara <span class="text-danger">*</span></label>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-light border-0 rounded-3">
+                        <i class="fas fa-venus"></i>
+                    </span>
+                    <input type="number" name="penduduk_sementara" min="0" value="{{ old('penduduk_sementara', $item->penduduk_sementara ?? 0) }}"
+                        class="form-control bg-light border-0 rounded-3" placeholder="Masukkan jumlah Penduduk Sementara">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label fw-semibold">Mutasi Penduduk <span class="text-danger">*</span></label>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-text bg-light border-0 rounded-3">
+                        <i class="fas fa-venus"></i>
+                    </span>
+                    <input type="number" name="mutasi_penduduk" min="0" value="{{ old('mutasi_penduduk', $item->mutasi_penduduk ?? 0) }}"
+                        class="form-control bg-light border-0 rounded-3" placeholder="Masukkan Mutasi Penduduk">
+                </div>
+            </div>
         </div>
 
         <div class="d-flex justify-content-end mt-4">

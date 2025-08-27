@@ -45,16 +45,16 @@ class ProdukDesaController extends Controller
         return redirect()->route('produk-desa.index')->with('success', 'Produk tersimpan');
     }
 
-    public function edit(ProdukDesa $produk_desum)
+    public function edit(ProdukDesa $produk_desa)
     {
-        return view('produk_desa.edit', ['item' => $produk_desum]);
+        return view('produk_desa.edit', ['item' => $produk_desa]);
     }
 
-    public function update(Request $request, ProdukDesa $produk_desum)
+    public function update(Request $request, ProdukDesa $produk_desa)
     {
         $validated = $request->validate([
             'nama' => 'required|string|max:255',
-            'slug' => 'nullable|string|max:255|unique:produk_desas,slug,' . $produk_desum->id,
+            'slug' => 'nullable|string|max:255|unique:produk_desas,slug,' . $produk_desa->id,
             'harga' => 'required|integer|min:0',
             'deskripsi' => 'nullable|string',
             'gambar' => 'nullable|image|max:4096',
@@ -62,8 +62,8 @@ class ProdukDesaController extends Controller
         ]);
 
         if ($request->hasFile('gambar')) {
-            if ($produk_desum->gambar_path)
-                Storage::disk('public')->delete($produk_desum->gambar_path);
+            if ($produk_desa->gambar_path)
+                Storage::disk('public')->delete($produk_desa->gambar_path);
             $validated['gambar_path'] = $request->file('gambar')->store('produk', 'public');
         }
 
@@ -72,15 +72,20 @@ class ProdukDesaController extends Controller
         }
         $validated['is_active'] = $request->boolean('is_active');
 
-        $produk_desum->update($validated);
+        $produk_desa->update($validated);
         return redirect()->route('produk-desa.index')->with('success', 'Produk diupdate');
     }
 
-    public function destroy(ProdukDesa $produk_desum)
+    public function destroy(ProdukDesa $produk_desa)
     {
-        if ($produk_desum->gambar_path)
-            Storage::disk('public')->delete($produk_desum->gambar_path);
-        $produk_desum->delete();
+        if ($produk_desa->gambar_path)
+            Storage::disk('public')->delete($produk_desa->gambar_path);
+        $produk_desa->delete();
         return back()->with('success', 'Produk dihapus');
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

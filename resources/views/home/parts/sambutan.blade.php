@@ -11,19 +11,14 @@
       <!-- Sambutan & Teks -->
       <div class="col-12 col-lg-7">
         <h1 class="sambutan-title fw-bold mb-1" style="text-align: center;">Sambutan Kepala Desa Sirih Sekapur Perkembangan</h1>
-        <div class="sambutan-nama mb-1">DENI</div>
+        <div class="sambutan-nama mb-1">DENI NORIZAN, S. E.	</div>
         <div class="sambutan-jabatan mb-4">Kepala Desa Sirih Sekapur Perkembangan</div>
 
         <div class="sambutan-scroll">
           <p><b>Assalamu Alaikum Warohmatullahi Wabarakatu.</b></p>
           <p class="text-justify">
-            Website ini hadir sebagai wujud transformasi desa Kersik menjadi desa yang mampu memanfaatkan teknologi
-            informasi dan komunikasi, terintegrasi kedalam sistem online. Keterbukaan informasi publik, pelayanan
-            publik dan kegiatan perekonomian di desa, guna mewujudkan desa Kersik sebagai desa wisata yang
-            berkelanjutan, adaptasi dan mitigasi terhadap perubahan iklim serta menjadi desa yang mandiri.<br><br>
-            Terima kasih kepada semua pihak yang telah banyak memberi dukungan dan kontribusi baik berupa tenaga,
-            pikiran dan semangat, terkhusus kepada KKN UMMUBA 2025 yang sangat mendukung kemajuan desa Sirih Sekapur
-            Perkembangan.
+          Website ini menjadi wujud langkah nyata Desa Sirih Sekapur Perkembangan dalam mempercepat transformasi digital. Melalui sistem layanan yang terintegrasi daring, kami memperkuat keterbukaan informasi publik, memudahkan pelayanan kepada warga, dan mendorong aktivitas perekonomian lokal. Inisiatif ini sejalan dengan visi desa wisata yang berkelanjutan, adaptif terhadap perubahan iklim, serta berdaya mandiri. <br> <br>
+          Kami menyampaikan terima kasih kepada seluruh pihak atas dukungan tenaga, pemikiran, dan semangatnya terutama kepada KKN UMMUBA 2025 yang telah menjadi mitra penting dalam kemajuan Desa Sirih Sekapur Perkembangan.
           </p>
         </div>
       </div>

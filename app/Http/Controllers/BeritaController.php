@@ -44,16 +44,16 @@ class BeritaController extends Controller
         return redirect()->route('berita_admin.index')->with('success', 'Berita tersimpan');
     }
 
-    public function edit(Berita $beritum)
+    public function edit(Berita $berita_admin)
     {
-        return view('berita_admin.edit', ['item' => $beritum]);
+        return view('berita_admin.edit', ['item' => $berita_admin]);
     }
 
-    public function update(Request $request, Berita $beritum)
+    public function update(Request $request, Berita $berita_admin)
     {
         $validated = $request->validate([
             'judul' => 'required|string|max:255',
-            'slug' => 'nullable|string|max:255|unique:beritas,slug,' . $beritum->id,
+            'slug' => 'nullable|string|max:255|unique:beritas,slug,' . $berita_admin->id,
             'gambar' => 'nullable|image|max:4096',
             'excerpt' => 'nullable|string',
             'konten' => 'required|string',
@@ -62,8 +62,8 @@ class BeritaController extends Controller
         ]);
 
         if ($request->hasFile('gambar')) {
-            if ($beritum->gambar_path)
-                Storage::disk('public')->delete($beritum->gambar_path);
+            if ($berita_admin->gambar_path)
+                Storage::disk('public')->delete($berita_admin->gambar_path);
             $validated['gambar_path'] = $request->file('gambar')->store('berita', 'public');
         }
 
@@ -71,15 +71,15 @@ class BeritaController extends Controller
             $validated['slug'] = Str::slug($validated['judul']) . '-' . substr(Str::uuid(), 0, 8);
         }
 
-        $beritum->update($validated);
+        $berita_admin->update($validated);
         return redirect()->route('berita_admin.index')->with('success', 'Berita diupdate');
     }
 
-    public function destroy(Berita $beritum)
+    public function destroy(Berita $berita_admin)
     {
-        if ($beritum->gambar_path)
-            Storage::disk('public')->delete($beritum->gambar_path);
-        $beritum->delete();
+        if ($berita_admin->gambar_path)
+            Storage::disk('public')->delete($berita_admin->gambar_path);
+        $berita_admin->delete();
         return back()->with('success', 'Berita dihapus');
     }
 }

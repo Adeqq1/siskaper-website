@@ -115,13 +115,13 @@
                 <div class="card mt-4">
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            
+
                         </div>
 
                         <div class="table-responsive">
                             <table class="table table-striped table-hover align-middle">
                                 <thead class="table-light">
-                                <h1 style="font-weight: bold; text-align: center;">Berita</h1>
+                                    <h1 style="font-weight: bold; text-align: center;">Berita</h1>
                                     <tr>
                                         <th class="text-nowrap">Judul</th>
                                         <th class="text-nowrap">Status</th>
@@ -149,6 +149,14 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <a href="{{ route('berita_admin.create') }}" class="btn btn-primary btn-sm"><i
+                                                class="fas fa-user-friends me-1"></i> Tambah Berita</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="mt-3">

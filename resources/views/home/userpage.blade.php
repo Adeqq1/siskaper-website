@@ -58,7 +58,7 @@
   <!-- Map Section End -->
 
   <!-- struktur desa -->
-  @include ('home.parts.struktur_desa')
+  @include('home.parts.struktur_desa', ['data' => $sotkData])
   <!-- struktur desa end -->
 
   <!-- Statistik Penduduk Start -->

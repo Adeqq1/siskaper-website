@@ -19,10 +19,9 @@
     <div class="navbar-nav pe-lg-2 py-3 py-lg-0 align-items-lg-center">
       <a href="{{ url('userpage') }}" class="nav-item nav-link fw-semibold">Home</a>
       <a href="{{ url('profile') }}" class="nav-item nav-link fw-semibold">Profil Desa</a>
-      <a href="{{ asset('info_grafis') }}" class="nav-item nav-link fw-semibold">Info Grafis</a>
-      <a href="{{ asset('berita') }}" class="nav-item nav-link fw-semibold">Berita</a>
+      <a href="{{ route('berita.publik') }}" class="nav-item nav-link fw-semibold">Berita</a>
       <a href="{{ asset('map') }}" class="nav-item nav-link fw-semibold">Map</a>
-      <a href="{{ asset('umkm') }}" class="nav-item nav-link fw-semibold">UMKM</a>
+      <a href="{{ asset('produk') }}" class="nav-item nav-link fw-semibold">UMKM</a>
       <a href="{{ asset('informasi') }}" class="nav-item nav-link fw-semibold">Informasi</a>
     </div>
   </div>
@@ -38,10 +37,9 @@
     <nav class="nav flex-column fs-6">
       <a href="{{ url('userpage') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Home</a>
       <a href="{{ url('profile') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Profil Desa</a>
-      <a href="{{ asset('info_grafis') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Info Grafis</a>
-      <a href="{{ asset('berita') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Berita</a>
+      <a href="{{ route('berita.publik') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Berita</a>
       <a href="{{ asset('map') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Map</a>
-      <a href="{{ asset('umkm') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">UMKM</a>
+      <a href="{{ asset('produk') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">UMKM</a>
       <a href="{{ asset('informasi') }}" class="nav-link py-2" data-bs-dismiss="offcanvas">Informasi</a>
     </nav>
   </div>

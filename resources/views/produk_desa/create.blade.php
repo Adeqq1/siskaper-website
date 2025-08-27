@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="container" style="margin-top: 10vh;">
-                    <h1 style="font-weight: bold; text-align: center;">Tambahkan Staf Baru</h1>
+                    <h1 style="font-weight: bold; text-align: center;">Tambahkan Produk Baru</h1>
 
                     <!-- form -->
                     <form action="{{ route('produk-desa.store') }}" method="POST" enctype="multipart/form-data">

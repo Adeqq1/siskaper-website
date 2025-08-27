@@ -43,59 +43,53 @@
     <!-- Navbar End -->
 
 
-    <div class="container">
-        <h1 class="headline">Berita Desa</h1>
-        <p class="subtitle">
-            Menyajikan informasi terbaru tentang peristiwa, berita terkini, dan artikel-artikel jurnalistik dari Desa
-            Sirih Sekapur Perkembangan
-        </p>
+    @php use Illuminate\Support\Facades\Storage; @endphp
 
-        @php
-            use Illuminate\Support\Facades\Storage;
-            use Illuminate\Support\Str;
-            use Carbon\Carbon;
-          @endphp
+    <section class="container-xxl py-5">
+        <div class="container">
+            <h1 class="fw-bold mb-3" style="color:#166138;">Berita Desa</h1>
+            <p class="subtitle">
+                Menyajikan informasi terbaru tentang peristiwa, berita terkini, dan artikel-artikel jurnalistik dari
+                Desa
+                Sirih Sekapur Perkembangan
+            </p>
 
-        <div class="news-grid">
-            @forelse($berita as $row)
-                @php
-                    $hasImg = $row->gambar_path && Storage::disk('public')->exists($row->gambar_path);
-                    $img = $hasImg ? Storage::disk('public')->url($row->gambar_path) : asset('home/img/berita/berita1.jpeg');
-                    $date = $row->published_at
-                        ? Carbon::parse($row->published_at)->translatedFormat('d M Y')
-                        : Carbon::parse($row->created_at)->translatedFormat('d M Y');
-                    $href = \Illuminate\Support\Facades\Route::has('berita.show')
-                        ? route('berita.show', $row->slug) : '#';
-                  @endphp
+            <div class="row g-4">
+                @forelse($berita as $row)
+                    @php
+                        $img = ($row->gambar_path && Storage::disk('public')->exists($row->gambar_path))
+                            ? Storage::disk('public')->url($row->gambar_path)
+                            : asset('home/img/berita/berita1.jpeg');
+                        $date = ($row->published_at ?? $row->created_at)->translatedFormat('d M Y');
+                    @endphp
+                    <div class="col-md-6 col-lg-4">
+                        <article class="news-card h-100 d-flex flex-column">
+                            <a href="{{ route('berita.show', $row) }}"
+                                class="text-decoration-none text-reset d-flex flex-column h-100">
+                                <img src="{{ $img }}" alt="{{ $row->judul }}" class="news-img">
+                                <div class="news-body d-flex flex-column flex-grow-1">
+                                    <h3 class="news-card-title">{{ $row->judul }}</h3>
+                                    <p class="news-card-desc flex-grow-1">
+                                        {{ \Illuminate\Support\Str::limit(strip_tags($row->excerpt ?: $row->konten), 140) }}
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="news-meta"><i class=""></i> </div>
+                                        <div class="news-date-badge">{{ $date }}</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                @empty
+                    <div class="col-12"><em>Belum ada berita dipublikasikan.</em></div>
+                @endforelse
+            </div>
 
-                <div class="news-card">
-                    <a href="{{ route('berita.show', $row) }}" class="text-decoration-none text-reset">
-                        <img src="{{ $img }}" alt="{{ $row->judul }}" class="news-image">
-                        <div class="news-content">
-                            <h2 class="news-title">{{ $row->judul }}</h2>
-                            <p class="news-desc">
-                                {{ Str::limit(strip_tags($row->excerpt ?: $row->konten), 160) }}
-                            </p>
-                        </div>
-                        <div class="news-meta">
-                            <div></div>
-                            <span class="news-date">{{ $date }}</span>
-                        </div>
-                    </a>
-                </div>
-            @empty
-                <div class="col-12">
-                    <em>Belum ada berita dipublikasikan.</em>
-                </div>
-            @endforelse
+            <div class="mt-4">
+                {{ $berita->links() }}
+            </div>
         </div>
-
-        {{-- Pagination Laravel (otomatis) --}}
-        <div class="mt-4 d-flex justify-content-center">
-            {{ $berita->onEachSide(1)->links() }}
-        </div>
-    </div>
-
+    </section>
 
 
     <!-- Footer Start -->

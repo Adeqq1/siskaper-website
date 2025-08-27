@@ -49,7 +49,9 @@
 
         {{-- inject teks sejarah sekali, dipakai mobile & desktop --}}
         @php
-            $sejarah = "Wilayah yang kini bernama Sirih Sekapur Perkembangan dahulu dikenal sebagai Tukum 3. Pada Desember 2011 wilayah ini dimekarkan dari Desa Sirih Sekapur dan resmi berganti nama menjadi Sirih Sekapur Perkembangan. Tokoh yang banyak disebut dalam fase awal adalah Alm. Zulfikar (Pak Icun), sementara Datuk Rio pertama dijabat oleh Deni Norizan, S.E. Sebelum pemekaran, mata pencaharian warga didominasi oleh petani padi, sesudahnya beralih ke komoditas karet dan kemudian mulai merambah kelapa sawit. Pada masa sebelumnya di Kecamatan Jujuhan, kawasan ini terdiri atas beberapa dusun antara lain Sirih Sekapur dan Rantau Ikil. Hasil pemekaran membuat Sirih Sekapur terbagi menjadi dua desa, yakni Perkembangan dan Ujung Lanjung. Meski bukan daerah transmigrasi, komposisi penduduknya banyak berlatar etnis Jawa, namun tradisi sosial-budaya tetap berpegang pada adat Melayu Jambi.";
+            $sejarah = "Wilayah yang kini bernama Sirih Sekapur Perkembangan dahulu dikenal sebagai Tukum 3. Pada Desember 2011 wilayah ini dimekarkan dari Desa Sirih Sekapur dan resmi berganti nama menjadi Sirih Sekapur Perkembangan. Tokoh yang banyak disebut dalam fase awal adalah Alm. Zulfikar (Pak Icun), sementara Datuk Rio pertama dijabat oleh Deni Nofrizan, S.E.
+
+            Sebelum pemekaran, mata pencaharian warga didominasi oleh petani padi, sesudahnya beralih ke komoditas karet dan kemudian mulai merambah ke pertanian kelapa sawit. Pada masa sebelumnya di Kecamatan Jujuhan, kawasan ini terdiri atas beberapa dusun antara lain Sirih Sekapur dan Rantau Ikil. Hasil pemekaran membuat Sirih Sekapur terbagi menjadi dua desa, yakni Perkembangan dan Ujung Lanjung. Meski bukan daerah transmigrasi, komposisi penduduknya banyak berlatar etnis Jawa, namun tradisi sosial-budaya tetap berpegang pada adat Melayu Jambi.";
           @endphp
 
         {{-- ========== MOBILE ACCORDION (SHOW ONLY ON MOBILE) ========== --}}
@@ -114,14 +116,14 @@
                             <div class="col-12">
                                 <div class="mm-imgwrap">
                                     <img class="img-fluid rounded-3"
-                                        src="{{ asset('home/img/struktur-pemerintahan.png') }}"
+                                        src="{{ asset('home/img/bagan-desa/sotk.jpg') }}"
                                         alt="Struktur Organisasi Pemerintahan Desa">
                                 </div>
                                 <div class="mm-caption">Struktur Organisasi Pemerintahan Desa</div>
                             </div>
                             <div class="col-12">
                                 <div class="mm-imgwrap">
-                                    <img class="img-fluid rounded-3" src="{{ asset('home/img/struktur-bpd.png') }}"
+                                    <img class="img-fluid rounded-3" src="{{ asset('home/img/bagan-desa/bpd.jpg') }}"
                                         alt="Struktur Organisasi BPD">
                                 </div>
                                 <div class="mm-caption">Struktur Organisasi Badan Permusyawaratan Desa</div>
@@ -144,7 +146,7 @@
                 <div id="accSejarah" class="collapse" data-bs-parent="#profilDesaAcc">
                     <div class="mm-body">
                         @if(!empty($sejarah))
-                            <p class="mb-0">{{ $sejarah }}</p>
+                            <p class="mb-0">  {!! nl2br(e($sejarah)) !!}</p>
                         @else
                             <div class="mm-empty">
                                 <img src="{{ asset('home/img/placeholder-empty.png') }}" alt="" class="mm-empty-img">
@@ -191,14 +193,14 @@
                     <div class="col-lg-6">
                         <div class="card-soft p-3">
                             <div class="fw-semibold mb-2">Struktur Organisasi Pemerintahan Desa</div>
-                            <img class="img-fluid rounded-3" src="{{ asset('home/img/struktur-pemerintahan.png') }}"
+                            <img class="img-fluid rounded-3" src="{{ asset('home/img/bagan-desa/sotk.jpg') }}"
                                 alt="Struktur Organisasi Pemerintahan Desa">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="card-soft p-3">
                             <div class="fw-semibold mb-2">Struktur Organisasi Badan Permusyawaratan Desa</div>
-                            <img class="img-fluid rounded-3" src="{{ asset('home/img/struktur-bpd.png') }}"
+                            <img class="img-fluid rounded-3" src="{{ asset('home/img/bagan-desa/bpd.jpg') }}"
                                 alt="Struktur Organisasi BPD">
                         </div>
                     </div>

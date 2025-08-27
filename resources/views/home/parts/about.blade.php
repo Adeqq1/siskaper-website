@@ -40,16 +40,16 @@
           </div>
 
           <div class="col-6 text-center">
-            <a href="{{ route('info_grafis') }}" class="card-link d-block">
+            <a href="{{ route('map') }}" class="card-link d-block">
               <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
                 <img src="{{ asset('home/img/map.png') }}" alt="Infografis Icon" class="mb-2" style="width:75px;">
-                <div class="fw-bold text-dark m-0">INFOGRAFIS</div>
+                <div class="fw-bold text-dark m-0">MAP DESA</div>
               </div>
             </a>
           </div>
 
           <div class="col-6 text-center">
-            <a href="{{ route('berita') }}" class="card-link d-block">
+            <a href="{{ route('berita.publik') }}" class="card-link d-block">
               <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
                 <img src="{{ asset('home/img/news.png') }}" alt="Berita Icon" class="mb-2" style="width:75px;">
                 <div class="fw-bold text-dark m-0">BERITA</div>
@@ -61,7 +61,7 @@
             <a href="{{ route('informasi') }}" class="card-link d-block">
               <div class="bg-white rounded p-3 shadow-sm w-500 h-100">
                 <img src="{{ asset('home/img/information.png') }}" alt="Surat Icon" class="mb-2" style="width:75px;">
-                <div class="fw-bold text-dark m-0">Pengajuan Surat</div>
+                <div class="fw-bold text-dark m-0">PENGAJUAN SURAT</div>
               </div>
             </a>
           </div>
@@ -86,51 +86,23 @@
       </div>
       {{-- 2 --}}
       <div class="col">
-        <a href="{{ url('info_grafis') }}" class="feature-link">
+        <a href="{{ url('map') }}" class="feature-link">
           <span class="feature-chip"><img src="{{ asset('home/img/map.png') }}" alt="Infografis"></span>
-          <span class="feature-label">Infografis</span>
+          <span class="feature-label">Map Desa</span>
         </a>
       </div>
       {{-- 3 --}}
-      <div class="col">
-        <a href="{{ url('idm') }}" class="feature-link">
-          <span class="feature-chip"><img src="{{ asset('home/img/star.png') }}" alt="IDM"></span>
-          <span class="feature-label">IDM</span>
-        </a>
-      </div>
-      {{-- 4 --}}
-      <div class="col">
-        <a href="{{ url('informasi') }}" class="feature-link">
-          <span class="feature-chip"><img src="{{ asset('home/img/information.png') }}" alt="PPID"></span>
-          <span class="feature-label">PPID</span>
-        </a>
-      </div>
-      {{-- 5 --}}
-      <div class="col">
+        <div class="col">
         <a href="{{ url('berita') }}" class="feature-link">
           <span class="feature-chip"><img src="{{ asset('home/img/news.png') }}" alt="Berita"></span>
           <span class="feature-label">Berita</span>
         </a>
       </div>
-      {{-- 6 --}}
+      {{-- 4 --}}
       <div class="col">
-        <a href="{{ url('belanja') }}" class="feature-link">
-          <span class="feature-chip"><img src="{{ asset('home/img/cart.png') }}" alt="Belanja"></span>
-          <span class="feature-label">Belanja</span>
-        </a>
-      </div>
-      {{-- 7 --}}
-      <div class="col">
-        <a href="{{ url('bansos') }}" class="feature-link">
-          <span class="feature-chip"><img src="{{ asset('home/img/hand.png') }}" alt="Bansos"></span>
-          <span class="feature-label">Bansos</span>
-        </a>
-      </div>
-      {{-- 8 --}}
-      <div class="col">
-        <a href="{{ url('galeri') }}" class="feature-link">
-          <span class="feature-chip"><img src="{{ asset('home/img/gallery.png') }}" alt="Galeri"></span>
-          <span class="feature-label">Galeri</span>
+        <a href="{{ url('informasi') }}" class="feature-link">
+          <span class="feature-chip"><img src="{{ asset('home/img/information.png') }}" alt="Belanja"></span>
+          <span class="feature-label">Pengajuan Surat</span>
         </a>
       </div>
     </div>

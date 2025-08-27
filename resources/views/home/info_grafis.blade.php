@@ -133,8 +133,8 @@
     </div>
     <div class="dusun-keterangan">
       <b>Keterangan:</b><br>
-      Padaelo : <span class="text-green">692 Jiwa</span> (≈69.6%)<br>
-      Empang  : <span class="text-green">302 Jiwa</span> (≈30.4%)
+      Tukum Jaya : <span class="text-green">692 Jiwa</span> (≈69.6%)<br>
+      Tukum Makmur  : <span class="text-green">302 Jiwa</span> (≈30.4%)
     </div>
   </div>
 </section>

@@ -119,7 +119,7 @@
             <div class="table-responsive">
               <table class="table table-striped table-hover align-middle">
                 <thead class="table-light">
-                <h1 style="font-weight: bold; text-align: center;">Galeri Desa</h1>
+                  <h1 style="font-weight: bold; text-align: center;">Galeri Desa</h1>
                   <tr>
                     <th class="text-nowrap">Judul</th>
                     <th class="text-nowrap">Tanggal</th>
@@ -144,7 +144,7 @@
               $url = Storage::disk($disk)->url($raw);
             }
             }
-          @endphp
+            @endphp
                 <tr>
                 <td>{{ $row->judul }}</td>
                 <td>{{ $row->tanggal }}</td>
@@ -168,6 +168,14 @@
           @endforeach
                 </tbody>
               </table>
+              <div class="card mt-3">
+                <div class="card-body">
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ route('galeri-desa.create') }}" class="btn btn-primary btn-sm"><i
+                        class="fas fa-user-friends me-1"></i> Tambah Foto</a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="mt-3">

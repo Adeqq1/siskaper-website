@@ -40,7 +40,7 @@
 
     <!-- Navbar Start -->
     @include('home.parts.navbar')
-    <!-- Navbar End -->
+    <!-- Navbar End --> 
 
     <style>
         body {

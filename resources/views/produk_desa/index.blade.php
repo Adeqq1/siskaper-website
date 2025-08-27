@@ -158,9 +158,9 @@
                 </td>
                 <td>{{ $row->is_active ? 'Aktif' : 'Nonaktif' }}</td>
                 <td class="text-nowrap">
-                  <a href="{{ route('stat-penduduk.edit', $row) }}"
+                  <a href="{{ route('produk-desa.edit', $row) }}"
                   class="btn btn-link p-0 me-2 action-edit">Edit</a>
-                  <form action="{{ route('stat-penduduk.destroy', $row) }}" method="POST" class="d-inline"
+                  <form action="{{ route('produk-desa.destroy', $row) }}" method="POST" class="d-inline"
                   onsubmit="return confirm('Hapus?')">
                   @csrf @method('DELETE')
                   <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
@@ -170,6 +170,14 @@
           @endforeach
                 </tbody>
               </table>
+              <div class="card mt-3">
+                <div class="card-body">
+                  <div class="d-flex flex-wrap gap-2">
+                    <a href="{{ route('produk-desa.create') }}" class="btn btn-primary btn-sm"><i
+                        class="fas fa-user-friends me-1"></i> Tambah Produk Desa</a>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="mt-3">

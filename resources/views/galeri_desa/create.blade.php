@@ -77,7 +77,7 @@
 
 
                 <div class="container" style="margin-top: 10vh;">
-                    <h1 style="font-weight: bold; text-align: center;">Tambahkan Staf Baru</h1>
+                    <h1 style="font-weight: bold; text-align: center;">Tambahkan Foto Baru</h1>
                     <!-- form -->
                     <form action="{{ route('galeri-desa.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf

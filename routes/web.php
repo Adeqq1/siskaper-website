@@ -9,6 +9,8 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ProdukDesaController;
 use App\Http\Controllers\GaleriDesaController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BeritaPublicController;
+use App\Http\Controllers\ProdukDesaPublicController;
 
 
 route::get('/', [HomeController::class, 'index']);
@@ -25,13 +27,6 @@ Route::middleware([
 
 
 
-
-
-
-
-
-
-
 route::get('redirect', [HomeController::class, 'redirect']);
 
 Route::get('/dashboardAdmin', function () {
@@ -39,7 +34,20 @@ Route::get('/dashboardAdmin', function () {
 })->name('home');
 
 Route::get('/userpage', function () {
-    return view('home.userpage');
+    $stat = \App\Models\StatPenduduk::orderByDesc('tahun')->first();
+    $sotkData = \App\Models\Sotk::orderBy('urutan')->limit(4)->get();
+    $berita = \App\Models\Berita::where('status', 'published')
+        ->orderByDesc('published_at')->orderByDesc('created_at')
+        ->limit(3)->get();
+    $produk = \App\Models\ProdukDesa::where('is_active', true)
+        ->latest()
+        ->get();
+    $galeri = \App\Models\GaleriDesa::orderByDesc('tanggal')
+        ->orderByDesc('created_at')
+        ->take(12)            // ambil secukupnya untuk homepage
+        ->get();
+
+    return view('home.userpage', compact('sotkData', 'stat', 'berita', 'produk', 'galeri'));
 })->name('userpage');
 
 
@@ -51,17 +59,23 @@ Route::get('/info_grafis', function () {
     return view('home.info_grafis');
 })->name('info_grafis');
 
-Route::get('/berita', function () {
-    return view('home.berita');
-})->name('berita');
+// Route::get('/berita', [HomeController::class, 'beritaPublik'])->name('berita');
+Route::get('/berita', [BeritaPublicController::class, 'index'])->name('berita.publik');
+Route::get('/berita/{berita:slug}', [BeritaPublicController::class, 'show'])->name('berita.show');
 
 Route::get('map', function () {
     return view('home.map');
 })->name('map');
 
-Route::get('umkm', function () {
-    return view('home.umkm');
-})->name('umkm');
+// Route::get('umkm', function () {
+//     return view('home.umkm');
+// })->name('umkm');
+
+// Listing publik + paginate
+Route::get('/produk', [ProdukDesaPublicController::class, 'index'])->name('produk.index');
+
+// Halaman detail per-produk (pakai slug kalau ada, fallback ke id)
+Route::get('/produk/{produk:slug}', [ProdukDesaPublicController::class, 'show'])->name('produk.show');
 
 Route::get('informasi', function () {
     return view('home.informasi');
@@ -104,11 +118,12 @@ Route::get('/form-surat/sproadik', function () {
 })->name('sproadik');
 
 
+
 Route::resource('sotk', SotkController::class);
 Route::resource('stat-penduduk', StatPendudukController::class);
 Route::resource('apbd-desa', ApbdDesaController::class);
 Route::resource('berita_admin', BeritaController::class);
 Route::resource('produk-desa', ProdukDesaController::class);
 Route::resource('galeri-desa', GaleriDesaController::class);
-
+Route::get('/parts/struktur_desa', [SotkController::class, 'publik'])->name('sotk.publik');
 

@@ -9,10 +9,12 @@ return new class extends Migration {
     {
         Schema::create('stat_penduduks', function (Blueprint $table) {
             $table->id();
-            $table->year('tahun');
+            $table->year('tahun');           
             $table->unsignedInteger('laki_laki')->default(0);
             $table->unsignedInteger('perempuan')->default(0);
             $table->unsignedInteger('kk')->default(0);
+            $table->unsignedInteger('penduduk_sementara')->default(0);
+            $table->unsignedInteger('mutasi_penduduk')->default(0);
             $table->unsignedInteger('total')->virtualAs('laki_laki + perempuan');
             $table->timestamps();
             $table->unique('tahun');
