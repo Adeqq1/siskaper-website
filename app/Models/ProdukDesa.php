@@ -11,7 +11,7 @@ class ProdukDesa extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 'slug', 'gambar_path', 'harga', 'deskripsi', 'status', 'published_at'
+        'nama', 'slug', 'gambar_path', 'harga', 'deskripsi', 'nomor_penjual', 'status', 'published_at'
     ];
 
     protected $casts = [

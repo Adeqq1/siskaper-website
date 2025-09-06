@@ -40,7 +40,7 @@
 
       </div>
       <div class="text-center mt-3">
-        <a href="#" class="btn btn-outline-success rounded-pill px-4 fw-bold sotk-more">Lihat Semua</a>
+        <a href="{{ route('sotks.index') }}" class="btn btn-outline-success rounded-pill px-4 fw-bold sotk-more">Lihat Semua</a>
       </div>
     </div>
    
@@ -67,7 +67,7 @@
       </div>
 
       <div class="text-center mt-4">
-        <a href="{{ route('sotk.index') }}" class="btn btn-outline-success rounded-pill px-4 fw-bold sotk-more">Lihat
+        <a href="{{ route('sotks.index') }}" class="btn btn-outline-success rounded-pill px-4 fw-bold sotk-more">Lihat
           Semua</a>
       </div>
     </div>

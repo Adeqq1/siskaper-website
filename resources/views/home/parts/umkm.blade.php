@@ -27,13 +27,13 @@
           $img = ($p->gambar_path && Storage::disk('public')->exists($p->gambar_path))
                ? Storage::disk('public')->url($p->gambar_path)
                : asset('home/img/umkm/bayam.jpg'); // placeholder
-          $href = \Illuminate\Support\Facades\Route::has('produk-desa.show')
-                ? route('produk-desa.show', $p->id)
+          $href = \Illuminate\Support\Facades\Route::has('produk-publik.show')
+                ? route('produk-publik.show', $p->id)
                 : '#';
         @endphp
 
         <article class="product-card">
-          <a href="{{ $href }}" class="text-decoration-none text-reset">
+          <a href="{{ route('produk-publik.show', $p->slug) }}" class="text-decoration-none text-reset">
             <img src="{{ $img }}" alt="{{ $p->nama }}" class="product-img">
             <div class="product-body">
               <h3 class="product-title">{{ $p->nama }}</h3>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="text-center mt-3">
-      @php $allProduk = \Illuminate\Support\Facades\Route::has('produk-desa.index') ? route('produk-desa.index') : '#'; @endphp
+      @php $allProduk = \Illuminate\Support\Facades\Route::has('produk-publik.index') ? route('produk-publik.index') : '#'; @endphp
       <a href="{{ $allProduk }}" class="btn btn-outline-success rounded-pill px-4 fw-bold umkm-more">Lihat Semua Produk</a>
     </div>
   </div>
@@ -81,7 +81,7 @@
         @endphp
         <div class="col-md-6 col-lg-4">
           <article class="product-card h-100">
-            <a href="{{ $href }}" class="text-decoration-none text-reset">
+            <a href="{{ route('produk-publik.show', $p->slug) }}" class="text-decoration-none text-reset">
               <img src="{{ $img }}" alt="{{ $p->nama }}" class="product-img">
               <div class="product-body">
                 <h3 class="product-title">{{ $p->nama }}</h3>

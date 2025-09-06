@@ -17,7 +17,7 @@ class SotkController extends Controller
     public function publik()
     {
         $sotkData = \App\Models\Sotk::orderBy('urutan')->get();
-        return view('home.parts.struktur_desa', ['data' => $sotkData]);
+        return view('home.parts.struktur_desa, home.sotk_publik', ['data' => $sotkData]);
     }
 
 
@@ -77,4 +77,6 @@ class SotkController extends Controller
         $sotk->delete();
         return back()->with('success', 'Data dihapus');
     }
+
+    
 }

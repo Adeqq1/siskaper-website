@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+  <title>Admin Dashboard</title>
   <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
   <link rel="icon" href="{{ asset('admin/assets/img/')}}" type="image/x-icon" />
 
@@ -75,6 +75,8 @@
           <!-- End Logo Header -->
         </div>
 
+
+
         <!-- navbar -->
         @include ('admin.parts.navbar')
 
@@ -82,22 +84,22 @@
 
         {{-- === DASHBOARD CONTENT (place inside <div class="main-panel">) === --}}
           @php
-      // fallback kalau tidak dipassing dari controller
-      $stats = $stats ?? [
-        'penduduk_total' => 0,
-        'kk' => 0,
-        'apbd_pendapatan' => 0,
-        'berita_published' => 0,
-      ];
-      $trend = $trend ?? [
-        'labels' => ['2019', '2020', '2021', '2022', '2023'],
-        'data' => [1200, 1275, 1330, 1410, 1505],
-      ];
-      $queue = $queue ?? [
-        ['label' => '2 draft berita menunggu publikasi', 'route' => route('berita_admin.index')],
-        ['label' => 'Lengkapi data Statistik tahun berjalan', 'route' => route('stat-penduduk.index')],
-      ];
-    @endphp
+            // fallback kalau tidak dipassing dari controller
+            $stats = $stats ?? [
+              'penduduk_total' => 0,
+              'kk' => 0,
+              'apbd_pendapatan' => 0,
+              'berita_published' => 0,
+            ];
+            $trend = $trend ?? [
+              'labels' => ['2019', '2020', '2021', '2022', '2023'],
+              'data' => [1200, 1275, 1330, 1410, 1505],
+            ];
+            $queue = $queue ?? [
+              ['label' => '2 draft berita menunggu publikasi', 'route' => route('berita_admin.index')],
+              ['label' => 'Lengkapi data Statistik tahun berjalan', 'route' => route('stat-penduduk.index')],
+            ];
+          @endphp
 
           <style>
             .stat-card {
@@ -127,6 +129,7 @@
               background: rgba(99, 102, 241, .12);
             }
 
+
             @media (max-width: 576px) {
               .row.stat-row {
                 --bs-gutter-x: .75rem;
@@ -136,18 +139,33 @@
           </style>
 
           <div class="container-fluid py-3" style="margin-top: 13vh;">
+            <div style="text-align:right;">
+              @php
+                $notifCount = \App\Models\PengajuanSurat::unread()->count();
+              @endphp
+              <a href="{{ route('pengajuan-surat.index') }}"
+                class="btn btn-sm btn-outline-primary position-relative" style="align-items: right !important;">
+                <i class="fas fa-bell"></i>
+                @if($notifCount > 0)
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    {{ $notifCount }}
+                  </span>
+                @endif
+              </a>
+            </div>
+
 
             @php
-        use App\Models\StatPenduduk;
-        use App\Models\Berita;
+              use App\Models\StatPenduduk;
+              use App\Models\Berita;
 
-        $latest = StatPenduduk::orderByDesc('tahun')->first();
-        $stats = [
-          'penduduk_total' => $latest ? (int) (($latest->total ?? ($latest->laki_laki + $latest->perempuan))) : 0,
-          'kk' => $latest->kk ?? 0,
-          'berita_published' => Berita::where('status', 'published')->count(),
-        ];
-      @endphp
+              $latest = StatPenduduk::orderByDesc('tahun')->first();
+              $stats = [
+                'penduduk_total' => $latest ? (int) (($latest->total ?? ($latest->laki_laki + $latest->perempuan))) : 0,
+                'kk' => $latest->kk ?? 0,
+                'berita_published' => Berita::where('status', 'published')->count(),
+              ];
+            @endphp
 
             {{-- Stat cards --}}
             <div class="row stat-row row-cols-2 row-cols-md-3 g-3 justify-content-center">
@@ -208,17 +226,17 @@
                   </div>
                   <div class="card-body">
                     @if(count($queue))
-                <ul class="list-group list-group-flush">
-                  @foreach($queue as $q)
-              <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
-              <span>{{ $q['label'] }}</span>
-              <a href="{{ $q['route'] ?? '#' }}" class="btn btn-sm btn-outline-primary">Buka</a>
-              </li>
-            @endforeach
-                </ul>
-          @else
-            <div class="text-muted">Semua beres. Mantap. 🎉</div>
-          @endif
+                      <ul class="list-group list-group-flush">
+                        @foreach($queue as $q)
+                          <li class="list-group-item px-0 d-flex justify-content-between align-items-center">
+                            <span>{{ $q['label'] }}</span>
+                            <a href="{{ $q['route'] ?? '#' }}" class="btn btn-sm btn-outline-primary">Buka</a>
+                          </li>
+                        @endforeach
+                      </ul>
+                    @else
+                      <div class="text-muted">Semua beres. Mantap. 🎉</div>
+                    @endif
                   </div>
                 </div>
               </div>
@@ -228,7 +246,8 @@
             <div class="card mt-3">
               <div class="card-body">
                 <div class="d-flex flex-wrap gap-2">
-                  <a href="{{ route('berita_admin.create') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i>
+                  <a href="{{ route('berita_admin.create') }}" class="btn btn-primary btn-sm"><i
+                      class="fas fa-plus me-1"></i>
                     Tambah Berita</a>
                   <a href="{{ route('galeri-desa.create') }}" class="btn btn-primary btn-sm"><i
                       class="fas fa-image me-1"></i> Unggah Galeri</a>
@@ -276,7 +295,7 @@
           </script>
 
 
-          
+
         </div>
       </div>
       <!--   Core JS Files   -->

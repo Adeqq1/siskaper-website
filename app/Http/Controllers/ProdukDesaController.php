@@ -57,6 +57,7 @@ class ProdukDesaController extends Controller
             'slug' => 'nullable|string|max:255|unique:produk_desas,slug,' . $produk_desa->id,
             'harga' => 'required|integer|min:0',
             'deskripsi' => 'nullable|string',
+            'nomor_penjual'  => 'nullable|string|max:30',
             'gambar' => 'nullable|image|max:4096',
             'is_active' => 'nullable|boolean',
         ]);

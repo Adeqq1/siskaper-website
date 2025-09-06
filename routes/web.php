@@ -11,6 +11,9 @@ use App\Http\Controllers\GaleriDesaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BeritaPublicController;
 use App\Http\Controllers\ProdukDesaPublicController;
+use App\Http\Controllers\SotkPublicController;
+use App\Http\Controllers\PengajuanSuratController;
+use App\Http\Controllers\PengajuanSuratAdminController;
 
 
 route::get('/', [HomeController::class, 'index']);
@@ -59,6 +62,19 @@ Route::get('/info_grafis', function () {
     return view('home.info_grafis');
 })->name('info_grafis');
 
+
+
+
+Route::get('/ppid/ajukan', [PengajuanSuratController::class, 'create'])->name('ppid.ajukan');
+Route::post('/ppid/ajukan', [PengajuanSuratController::class, 'store'])->name('ppid.ajukan.store');
+
+
+    Route::get('pengajuan-surat', [PengajuanSuratAdminController::class, 'index'])->name('pengajuan-surat.index');
+    Route::get('pengajuan-surat/{pengajuan}', [PengajuanSuratAdminController::class, 'show'])->name('pengajuan-surat.show');
+    Route::patch('pengajuan-surat/{pengajuan}/read', [PengajuanSuratAdminController::class, 'markAsRead'])->name('pengajuan-surat.read');
+    Route::delete('pengajuan-surat/{pengajuan}', [PengajuanSuratAdminController::class, 'destroy'])->name('pengajuan-surat.destroy');
+
+
 // Route::get('/berita', [HomeController::class, 'beritaPublik'])->name('berita');
 Route::get('/berita', [BeritaPublicController::class, 'index'])->name('berita.publik');
 Route::get('/berita/{berita:slug}', [BeritaPublicController::class, 'show'])->name('berita.show');
@@ -72,51 +88,16 @@ Route::get('map', function () {
 // })->name('umkm');
 
 // Listing publik + paginate
-Route::get('/produk', [ProdukDesaPublicController::class, 'index'])->name('produk.index');
-
+Route::get('/produk', [ProdukDesaPublicController::class, 'index'])->name('produk-publik.index');
 // Halaman detail per-produk (pakai slug kalau ada, fallback ke id)
-Route::get('/produk/{produk:slug}', [ProdukDesaPublicController::class, 'show'])->name('produk.show');
+Route::get('/produk/{produk:slug}', [ProdukDesaPublicController::class, 'show'])->name('produk-publik.show');
+
+
+Route::get('/struktur-desa', [SotkPublicController::class, 'index'])->name('sotks.index');
 
 Route::get('informasi', function () {
     return view('home.informasi');
 })->name('informasi');
-
-
-// Route untuk Surat Keterangan bbm
-Route::get('/form-surat/bbm', function () {
-    return view('home.form_surat.form_izinEcerBBM');
-})->name('bbm');
-
-// Route untuk form Surat Keterangan JBT
-Route::get('/form-surat/jual-beli-tanah', function () {
-    return view('home.form_surat.form_jualBelitanah');
-})->name('tanah');
-
-// Route untuk form Surat Keterangan domisili
-Route::get('/form-surat/domisili', function () {
-    return view('home.form_surat.form_keteranganDomisili');
-})->name('domisili');
-
-// Route untuk form Surat Keterangan kematian
-Route::get('/form-surat/surat-keterangan-kematian', function () {
-    return view('home.form_surat.form_keteranganKematian');
-})->name('kematian');
-
-// Route untuk form Surat Keterangan Usaha
-Route::get('/form-surat/usaha', function () {
-    return view('home.form_surat.form_usaha');
-})->name('usaha');
-
-// Route untuk form Surat Keterangan skck
-Route::get('/form-surat/skck', function () {
-    return view('home.form_surat.form_pengantarSKCK');
-})->name('skck');
-
-// Route untuk form Surat Keterangan sproadik
-Route::get('/form-surat/sproadik', function () {
-    return view('home.form_surat.form_SPROADIK');
-})->name('sproadik');
-
 
 
 Route::resource('sotk', SotkController::class);

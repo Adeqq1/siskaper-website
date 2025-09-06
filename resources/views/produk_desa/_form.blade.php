@@ -41,6 +41,22 @@
                 @error('harga')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
             </div>
 
+            {{-- Nomor Penjual --}}
+            <div class="col-md-6">
+                <label for="nomor_penjual" class="form-label">Nomor Penjual</label>
+                <input type="text" name="nomor_penjual" id="nomor_penjual"
+                    class="form-control @error('nomor_penjual') is-invalid @enderror"
+                    placeholder="08xxxxxxxxxx atau +62xxxxxxxxxx"
+                    value="{{ old('nomor_penjual', $produk->nomor_penjual ?? '') }}">
+                <div class="form-text">
+                    Boleh format bebas (08… atau +62…). Saat ditampilkan ke publik akan dinormalisasi otomatis untuk
+                    Telepon & WhatsApp.
+                </div>
+                @error('nomor_penjual')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
             <!-- Status -->
             <div class="col-md-6 d-flex align-items-end">
                 <div class="form-check form-switch ms-1">
@@ -80,6 +96,9 @@
                 @endisset
                 @error('gambar')<div class="text-danger small mt-1">{{ $message }}</div>@enderror
             </div>
+
+            
+
         </div>
 
         <div class="d-flex justify-content-end mt-4">

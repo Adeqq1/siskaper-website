@@ -3,7 +3,7 @@
 
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+  <title>Admin Dashboard</title>
   <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
   <link rel="icon" href="{{ asset('admin/assets/img/kaiadmin/favicon.ico')}}" type="image/x-icon" />
 
@@ -125,49 +125,65 @@
                     <th class="text-nowrap">Foto</th>
                     <th class="text-nowrap">Status</th>
                     <th class="text-nowrap">Aksi</th>
+                    <th class="text-nowrap">Nomor WA</th>
                   </tr>
                 </thead>
                 <tbody>
                   @foreach($data as $row)
-                @php
-            $disk = 'public';
-            $raw = $row->gambar_path; // field yang benar
-            $url = null;
-            if ($raw) {
-            if (filter_var($raw, FILTER_VALIDATE_URL)) {
-              $url = $raw;
-            } else {
-              $p = preg_replace('#^(public/|storage/)#', '', $raw);
-              if (Storage::disk($disk)->exists($p))
-              $url = Storage::disk($disk)->url($p);
-              elseif (Storage::disk($disk)->exists($raw))
-              $url = Storage::disk($disk)->url($raw);
-            }
-            }
-            @endphp
-                <tr>
-                <td>{{ $row->nama }}</td>
-                <td>{{ number_format($row->harga) }}</td>
-                <td>
-                  @if ($url)
-              <img src="{{ $url }}" class="img-thumbnail" style="height:48px;width:auto"
-              alt="foto {{ $row->nama }}">
-            @else
-              <span class="text-muted">—</span>
-            @endif
-                </td>
-                <td>{{ $row->is_active ? 'Aktif' : 'Nonaktif' }}</td>
-                <td class="text-nowrap">
-                  <a href="{{ route('produk-desa.edit', $row) }}"
-                  class="btn btn-link p-0 me-2 action-edit">Edit</a>
-                  <form action="{{ route('produk-desa.destroy', $row) }}" method="POST" class="d-inline"
-                  onsubmit="return confirm('Hapus?')">
-                  @csrf @method('DELETE')
-                  <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
-                  </form>
-                </td>
-                </tr>
-          @endforeach
+                    @php
+                      $disk = 'public';
+                      $raw = $row->gambar_path; // field yang benar
+                      $url = null;
+                      if ($raw) {
+                        if (filter_var($raw, FILTER_VALIDATE_URL)) {
+                          $url = $raw;
+                        } else {
+                          $p = preg_replace('#^(public/|storage/)#', '', $raw);
+                          if (Storage::disk($disk)->exists($p))
+                            $url = Storage::disk($disk)->url($p);
+                          elseif (Storage::disk($disk)->exists($raw))
+                            $url = Storage::disk($disk)->url($raw);
+                        }
+                      }
+                    @endphp
+                    <tr>
+                      <td>{{ $row->nama }}</td>
+                      <td>{{ number_format($row->harga) }}</td>
+                      <td>
+                        @if ($url)
+                          <img src="{{ $url }}" class="img-thumbnail" style="height:48px;width:auto"
+                            alt="foto {{ $row->nama }}">
+                        @else
+                          <span class="text-muted">—</span>
+                        @endif
+                      </td>
+                      @php
+                        $nomorRaw = trim($row->nomor_penjual ?? '');
+                        $digits = preg_replace('/\D+/', '', $nomorRaw);           // ambil hanya angka
+                        $waNumber = $digits ? ('62' . ltrim($digits, '0')) : null;  // 08xxxxx -> 628xxxxx
+                        $waHref = $waNumber ? ('https://wa.me/' . $waNumber) : null;
+                      @endphp
+
+                      <td class="text-nowrap">
+                        @if($waHref)
+                          <a href="{{ $waHref }}" target="_blank" rel="noopener" class="btn btn-success btn-sm">
+                            <i class="fab fa-whatsapp"></i> {{ $nomorRaw }}
+                          </a>
+                        @else
+                          <span class="text-muted">—</span>
+                        @endif
+                      </td>
+                      <td>{{ $row->is_active ? 'Aktif' : 'Nonaktif' }}</td>
+                      <td class="text-nowrap">
+                        <a href="{{ route('produk-desa.edit', $row) }}" class="btn btn-link p-0 me-2 action-edit">Edit</a>
+                        <form action="{{ route('produk-desa.destroy', $row) }}" method="POST" class="d-inline"
+                          onsubmit="return confirm('Hapus?')">
+                          @csrf @method('DELETE')
+                          <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
+                        </form>
+                      </td>
+                    </tr>
+                  @endforeach
                 </tbody>
               </table>
               <div class="card mt-3">
